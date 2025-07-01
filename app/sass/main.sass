@@ -47,7 +47,7 @@
 		border: 1px solid $dark
 		box-shadow: 0 0 15px rgba($text, .6)
 
-	&--dark
+	&--hero
 		border: 1px solid $dark
 		color: $text
 		background-color: $dark
@@ -150,7 +150,7 @@
 	padding: 15px 0
 	z-index: 1000
 	background-color: rgba(#1A1A1A, .95)
-	box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+	box-shadow: 0 0 10px rgba(255, 255, 255, .4)
 	+transition
 
 	&--active
@@ -179,7 +179,7 @@
 
 			&__btn
 				background-color: $dark
-				color: #fff
+				color: #ffffff
 				border: 1px solid $dark
 				color: $text
 				background-color: $dark
@@ -246,7 +246,7 @@
 		&:hover
 			color: $accent
 			&::before
-				width: 120%
+				width: 110%
 				background-color: $accent
 
 		&:active
@@ -258,8 +258,7 @@
 		&::before
 			content: ''
 			position: absolute
-			left: 50%
-			transform: translateX(-50%)
+			left: 0
 			bottom: -5px
 			width: 30px
 			height: 2px
@@ -272,13 +271,12 @@
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
-	width: 100%
 
 .title
 	font-size: 54px
 	margin-left: 30px
 	margin-bottom: 45px
-	color: #fff
+	color: #ffffff
 
 .hero
 	height: 100vh
@@ -337,6 +335,7 @@
 	justify-content: center
 	align-items: center
 	flex-direction: column
+	display: flex
 
 	&__slider
 		overflow: visible
@@ -363,34 +362,88 @@
 		margin-bottom: 60px
 
 .bunner
-	background-image: url(../images/bunner__bg.jpg)
+	overflow: hidden
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	min-height: 100vh
+	background-size: cover
+	background-position: center
+	background-repeat: no-repeat
+	color: $dark
+	align-items: flex-end
+
+	&--one
+		background-image: url(../images/bunner--one.jpg)
+	
+	&--two
+		background-image: url(../images/bunner--two.jpg)
+
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		justify-content: center
+		gap: 20px
 
 	&__title
-		text-transform: uppercase
 		text-align: center
-		font-size: 26px
-		margin-bottom: 1em
+		margin: 0
+		width: 800px
+		color: $text
 
+		&--dark
+			color: $dark
+			width: 500px
+
+	&__subtitle
+		color: $text
+		text-align: center
+
+		&--dark
+			color: $dark
+
+	&__form
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: 30px
+		max-width: 500px
+		width: 100%
 
 .footer
-	background-color: #081307
+	background-color: $dark
+	background-image: url(../images/footer__bg.png)
+	background-repeat: no-repeat
+	background-position: 60% 0
 	padding: 30px 0
 
 	&__container
 		+between
-
-	&__logo
+		align-items: start
+		gap: 15px
 
 	&__col
 		display: flex
 		flex-direction: column
-		gap: 20px
+		width: 24%
+		gap: 15px
+		padding-top: 20px
+
+		&:first-child
+			padding-top: 0
 
 		+r(992)
 			gap: 20px
 
+	&__logo
+		max-width: 100%
+
 	&__title
-		margin-bottom: 20px
+		color: $accent
+		font-size: 22px
 
 	&__nav
 
@@ -398,14 +451,32 @@
 		margin-bottom: 20px
 
 	&__link
-		color: #fff
+		position: relative
+		color: #ffffff
 		text-decoration: none
-		font-size: 16px
-		line-height: 1.4
+		font-size: 20px
 
 		&:hover
 			color: $accent
+			&::before
+				width: 120%
+				background-color: $accent
 
+		&:active
+			color: $accent
+			&::before
+				width: 90%
+				background-color: $accent
+
+		&::before
+			content: ''
+			position: absolute
+			left: 0
+			bottom: -5px
+			width: 30px
+			height: 2px
+			background-color: $text
+			+transition
 
 // -----MODAL-----
 .modal
@@ -463,7 +534,7 @@
 			position: absolute
 			left: 50%
 			top: 50%
-			background: #fff
+			background: #ffffff
 			transition: all .6s
 			border-radius: 4px
 			height: 22px
@@ -477,7 +548,7 @@
 
 	&__form
 		z-index: 1
-		background-color: #fff
+		background-color: #ffffff
 		box-shadow: 0 0 16px rgba(0, 0, 0, 0.29)
 		width: 100%
 		max-width: 500px
@@ -509,7 +580,8 @@
 .form
 	position: relative
 	max-width: 500px
-	+pseudo
+	width: 100%
+	z-index: 1
 
 	&::after
 		width: 100%
@@ -530,32 +602,60 @@
 
 	&__item
 		position: relative
-		margin-bottom: 15px
-		
+		width: 100%
 
 	&__label
-		font-size: 16px
+		position: absolute
+		left: 15px
+		top: 10px
+		font-size: 22px
 		font-weight: 500
-		margin-bottom: 5px
+		color: $text
+		z-index: -1
+		+transition
+
+		&--dark
+			color: $dark
 
 	&__input
 		width: 100%
-		height: 40px
-		line-height: 40px
+		height: 50px
+		line-height: 50px
 		padding: 0 15px
 		background-color: transparent
+		border: 0
+		border-bottom: 1px solid $text
+		font-size: 22px
+		color: $text
+
+		&--dark
+			border-bottom: 1px solid $dark
+			color: $dark
+
+			&:hover
+				box-shadow: 0 6px 1px 0 rgba($dark, .1)
+
+			&::placeholder
+				color: $dark
 
 		&::placeholder
-			line-height: 40px
-			font-size: 16px
+			line-height: 50px
+			color: transparent
 
-		&:focus
-			box-shadow: 0 0 4px 0 rgba($text, 1)
+		&:hover
+			box-shadow: 0 6px 1px 0 rgba(#000, .1)
+
+		&:hover + label,
+		&:focus + label,
+		&:active + label,
+		&:not(:placeholder-shown) + label
+			top: -12px
+			font-size: 14px
 
 		&._error
-			box-shadow: 0 0 4px 0 rgba(red, 1)
-			border-color: red
-	
+			box-shadow: 0 8px 1px 0 rgba(#ff0000, .3)
+			border-bottom: 1px solid #ff0000
+
 	&__textarea
 		width: 100%
 		resize: none
@@ -592,7 +692,7 @@
 				width: 16px
 				height: 16px
 				border-radius: 50%
-				background-color: #fff
+				background-color: #ffffff
 				transform: scale(0)
 				+transition
 
@@ -631,7 +731,7 @@
 			justify-content: center
 			align-items: center
 			background-color: $dark
-			color: #fff
+			color: #ffffff
 			padding: 0 15px
 			cursor: pointer
 
@@ -643,15 +743,17 @@
 				max-width: 100%
 
 	&__checkbox
+		padding: 0 15px
+
 		&._error
 			.form__checkbox_label::before
-				box-shadow: 0 0 7px 0 rgba(red, 1)
+				box-shadow: 0 0 6px 0 rgba(red, 1)
 
 		&_label
 			position: relative
 			width: 100%
-			font-size: 16px
-			line-height: 140%
+			font-size: 22px
+			line-height: 1
 			display: inline-flex
 			align-items: center
 			cursor: pointer
@@ -663,7 +765,7 @@
 				height: 24px
 				background-color: $dark
 				border-radius: 4px
-				margin-right: 10px
+				margin-right: 15px
 				+transition
 
 			&::after
@@ -673,11 +775,14 @@
 				position: absolute
 				top: 4px
 				left: 4px
-				background-color: #fff
+				background-color: #ffffff
 				transform: scale(0)
 				+transition
 
 			a
+				color: $dark
+
+			&--dark
 				color: $text
 
 		&_input
@@ -688,23 +793,40 @@
 
 	&__btn
 		order: 1
+		width: 100%
 
 		&_button
 			@extend .btn
+			width: 100%
+
+			&--dark
+				@extend .btn--hero
+				background-color: $dark
+				color: #ffffff
+				border: 1px solid $dark
+				font-family: $fonts
+
+				&:hover
+					box-shadow: 0 0 15px rgba($text, .3)
+
+				&:active
+					border: 1px solid $text
+					box-shadow: 0 0 15px rgba($text, .6)
 
 	&__error
 		position: absolute
-		bottom: -15px
+		bottom: -18px
 		right: 25px
 		left: 25px
 		transition: all .3s
 		animation: error .3s linear 1 forwards
-		color: #fff
+		color: #ffffff
 		text-align: center
 		font-weight: 600
 		background-color: red
 		border-radius: 10px
 		z-index: 1
+		font-size: 12px
 
 		&::before
 			content: ''
@@ -745,5 +867,3 @@
 
 			img
 				max-width: 50%
-
-

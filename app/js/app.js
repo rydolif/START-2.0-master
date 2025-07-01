@@ -105,12 +105,6 @@ document.addEventListener("DOMContentLoaded", function() {
 				} else {
 					header.classList.remove(active);
 				}
-
-				if (top >= 920) {
-					header.classList.add('header--white');
-				} else {
-					header.classList.remove('header--white');
-				}
 	
 			});
 	
@@ -215,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
 							item.reset();
 							item.classList.remove('_sending');
 						} else {
-							alert('Ошибка при отправке');
+							alert('Помилка при відправці');
 							item.classList.remove('_sending');
 						}
 
@@ -288,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						var reader = new FileReader();
 						reader.onload = function (e) {
 							if(['application/pdf'].includes(file.type)) {
-								formPreview.innerHTML = `Файл выбран`;
+								formPreview.innerHTML = `Файл вибраний`;
 							}else{
 								formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
 							}
@@ -304,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function formAddError(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
-					div.innerHTML = "Введите данные в поле";
+					div.innerHTML = "Введіть дані в поле";
 
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
@@ -314,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function formAddErrorEmail(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
-					div.innerHTML = "Введите свою почту";
+					div.innerHTML = "Введіть свою пошту";
 
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');
@@ -324,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function formAddErrorCheck(input) {
 					let div = document.createElement('div');
 					div.classList.add("form__error");
-					div.innerHTML = "Согласие на обработку персональных данных";
+					div.innerHTML = "Згода на обробку персональних даних";
 
 					input.parentElement.append(div);
 					input.parentElement.classList.add('_error');

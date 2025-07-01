@@ -58,24 +58,24 @@
 		<div class="swiper hero__slider">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide hero__item">
-					<img src="images/hero__bg_1.jpg" alt="" class="hero__img">
-					<div class="hero__content">
-						<h2 class="hero__title">Собі - честь <br>Україні - слава</h2>
-						<a href="#" class="hero__btn btn btn--dark">Приєднуйся</a>
-					</div>
-				</div>
-				<div class="swiper-slide hero__item">
 					<img src="images/hero__bg_2.jpg" alt="" class="hero__img">
 					<div class="hero__content">
-						<h2 class="hero__title">Разом <br>до перемоги!</h2>
-						<a href="#" class="hero__btn btn btn--dark">Приєднуйся</a>
+						<h2 class="hero__title">Собі - честь <br>Україні - слава</h2>
+						<a href="#" class="hero__btn btn btn--hero">Приєднуйся</a>
 					</div>
 				</div>
 				<div class="swiper-slide hero__item">
 					<img src="images/hero__bg_3.jpg" alt="" class="hero__img">
 					<div class="hero__content">
+						<h2 class="hero__title">Разом <br>до перемоги!</h2>
+						<a href="#" class="hero__btn btn btn--hero">Приєднуйся</a>
+					</div>
+				</div>
+				<div class="swiper-slide hero__item">
+					<img src="images/hero__bg_1.jpg" alt="" class="hero__img">
+					<div class="hero__content">
 						<h2 class="hero__title">крізь <br>вогонь і темряву</h2>
-						<a href="#" class="hero__btn btn btn--dark">Приєднуйся</a>
+						<a href="#" class="hero__btn btn btn--hero">Приєднуйся</a>
 					</div>
 				</div>
 			</div>
@@ -146,98 +146,105 @@
 		</div>
 	</section>
 
-	<section class="section">
-		<div class="container"></div>
-	</section>
+	<section class="section bunner bunner--one">
+		<div class="container bunner__container">
 
-	<!-- <section class="section bunner">
-		<div class="container">
+			<h2 class="title bunner__title bunner__title--dark">Є питання?</h2>
 
-			<h2 class="title bunner__title">Котракт 18 - 24</h2>
+			<form action="#" class="form bunner__form bunner__form--dark" method="POST">
 
-			<form action="#" class="form" method="POST">
-
-				<h3 class="bunner__title form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
+				<h3 class="bunner__subtitle bunner__subtitle--dark form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
 
 				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
 
 				<div class="form__item">
-					<label for="formName" class="form__label">Имя*</label>
-					<input id="formName" type="text" name="name" placeholder="Имя" class="form__input _req">
+					<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input form__input--dark _req">
+					<label for="formFirstName" class="form__label form__label--dark">Прізвище*</label>
 				</div>
 
 				<div class="form__item">
-					<label for="formPhone" class="form__label">Телефон*</label>
-					<input id="formPhone" type="tel" name="phone" placeholder="Телефон" class="form__input _req">
+					<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input form__input--dark _req">
+					<label for="formFirstName" class="form__label form__label--dark">Ім'я*</label>
 				</div>
 
 				<div class="form__item">
-					<label for="formMail">Почта*</label>
-					<input id="formMail" type="email" name="mail" placeholder="Почта" class="form__input _req _email">
+					<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input form__input--dark _req">
+					<label for="formFirstName" class="form__label form__label--dark">Побатькові*</label>
 				</div>
 
 				<div class="form__item">
-					<div class="form__label">Левша или правша?</div>
-					<div class="form__options">
-						<div class="form__options_item">
-							<input id="formRigth" type="radio" value="raight" name="hand" class="form__options_input" checked>
-							<label for="formRigth" class="form__options_label"><span>Правша</span></label>
-						</div>
-						<div class="form__options_item">
-							<input id="formLeft" type="radio" value="left" name="hand" class="form__options_input">
-							<label for="formLeft" class="form__options_label"><span>Левша</span></label>
-						</div>
-					</div>
-				</div>
-
-				<div class="form__item">
-					<label for="formMessage" class="form__label">Сообщение</label>
-					<textarea id="formMessage" name="message" class="form__textarea"></textarea>
-				</div>
-
-				<div class="form__item">
-					<label for="formAge" class="form__label">Возраст:</label>
-					<select id="formAge" name="age"  class="form__select">
-						<option value="18" selected="selected">18</option>
-						<option value="25">25</option>
-						<option value="30">30</option>
-						<option value="50">50</option>
-					</select>
-				</div>
-
-				<div class="form__item">
-					<div class="form__label">Прикрепить фото:</div>
-					<div class="form__file formImgFile">
-						<div class="form__file_item">
-							<input accept=".jpg, .png, .gif, .ico" type="file" name="image" class="formImage form__file_input">
-							<label class="formLebel form__file_button btn">Выбрать</label>
-						</div>
-						<div class="formPreview form__file_preview"></div>
-					</div>
+					<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input form__input--dark _req">
+					<label for="formPhone" class="form__label form__label--dark">Телефон*</label>
 				</div>
 
 				<div class="form__item">
 					<div class="form__checkbox">
-						<input id="formAgreement" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement" class="form__checkbox_label"><span>Персональные данные <a href="#">Файл</a></span></label>
+						<input id="formAgreement1" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+						<label for="formAgreement1" class="form__checkbox_label">Згода на обробку персональних данних</label>
 					</div>
 				</div>
 				
 				<div class="form__btn">
-					<button type="submit" class="btn form__btn_button" name="submit">Отправить</button>
+					<button type="submit" class="btn form__btn_button form__btn_button--dark" name="submit">Відправити</button>
 				</div>
 
 			</form>
-
 		</div>
-	</section> -->
+	</section>
 
-	<!-- <footer class="footer">
+	<section class="section bunner bunner--two">
+		<div class="container bunner__container">
+
+			<form action="#" class="form bunner__form bunner__form--white" method="POST">
+
+				<h2 class="title bunner__title">БАЖАЄШ ПІДПИСАТИ Контракт 18-24</h2>
+				<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
+
+				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
+
+				<div class="form__item">
+					<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
+					<label for="formFirstName" class="form__label">Прізвище*</label>
+				</div>
+
+				<div class="form__item">
+					<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
+					<label for="formFirstName" class="form__label">Ім'я*</label>
+				</div>
+
+				<div class="form__item">
+					<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
+					<label for="formFirstName" class="form__label">Побатькові*</label>
+				</div>
+
+				<div class="form__item">
+					<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
+					<label for="formPhone" class="form__label">Телефон*</label>
+				</div>
+
+				<div class="form__item">
+					<div class="form__checkbox">
+						<input id="formAgreement2" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+						<label for="formAgreement2" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
+					</div>
+				</div>
+
+				<div class="form__btn">
+					<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
+				</div>
+
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer">
 		<div class="footer__container container">
 
-			<a href="/" class="footer__logo">
-				<img src="images/footer__logo.svg" alt="">
-			</a>
+			<div class="footer__col">
+				<a href="/" class="footer__logo">
+					<img src="images/footer__logo.svg" alt="">
+				</a>
+			</div>
 
 			<div class="footer__col">
 				<h3 class="footer__title">МЕНЮ САЙТА </h3>
@@ -264,27 +271,40 @@
 				<h3 class="footer__title">СЛІДКУЙ ЗА НАМИ</h3>
 				<ul class="footer__nav">
 					<li class="footer__item">
-						<a href="/" class="footer__link">Про підрозділ</a>
+						<a href="/" class="footer__link">Іnstagram</a>
 					</li>
 					<li class="footer__item">
-						<a href="#step" class="footer__link">Підготовка</a>
+						<a href="#step" class="footer__link">Facebook</a>
 					</li>
 					<li class="footer__item">
-						<a href="#about" class="footer__link">Посади</a>
+						<a href="#about" class="footer__link">Work.ua</a>
 					</li>
 					<li class="footer__item">
-						<a href="#about" class="footer__link">Контракт 18 - 24</a>
+						<a href="#about" class="footer__link">Robota.ua</a>
 					</li>
 					<li class="footer__item">
-						<a href="#about" class="footer__link">Контакти</a>
+						<a href="#about" class="footer__link">Lobbyx.army</a>
 					</li>
 				</ul>
 			</div>
 
-			<div class="footer__col"></div>
+			<div class="footer__col">
+				<h3 class="footer__title">З ПИТАНЬ РЕКРУТИНГУ</h3>
+				<ul class="footer__nav">
+					<li class="footer__item">
+						<a href="tel:+380660000000" class="footer__link">+38 (066) 000 00 00</a>
+					</li>
+					<li class="footer__item">
+						<a href="tel:+380660000000" class="footer__link">+38 (066) 000 00 00</a>
+					</li>
+					<li class="footer__item">
+						<a href="mailto:recruiting-4@92.army" class="footer__link">recruiting-4@92.army</a>
+					</li>
+				</ul>
+			</div>
 
 		</div>
-	</footer> -->
+	</footer>
 
 	<div class="modal" id="modal__edits">
 		<form action="#" class="modal__form form" method="POST">
