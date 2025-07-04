@@ -494,6 +494,47 @@
 		opacity: 0
 		transition: all .8s
 		
+.training
+	background-color: #1A1A1A
+	background-image: url(../images/about__bg.png)
+	background-size: 17%
+	background-position: 100% 0
+	min-height: 100vh
+	overflow: hidden
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	display: flex
+
+	&__text
+		margin-bottom: 30px
+
+	&__grid
+		display: flex
+		flex-wrap: wrap
+		gap: 15px 1%
+		width: 100%
+
+	&__item
+		position: relative
+		overflow: hidden
+		height: 255px
+
+		&--big
+			width: 36%
+
+		&--small
+			width: 26%
+
+	&__img
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		min-width: 100%
+		height: 100%
+		transition: all 10s
 
 .footer
 	background-color: $dark
