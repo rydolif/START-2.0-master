@@ -2,12 +2,12 @@
 @use "_base/fonts" as *
 @use "_base/vars" as *
 
-// -----CONTAINER-----
 .container
 	width: 100%
 	max-width: 1400px
 	padding: 0 15px
 	margin: 0 auto
+	transition: all 1.6s
 
 	+r(1400)
 		max-width: 1200px
@@ -24,7 +24,6 @@
 	+r(576)
 		max-width: 480px
 
-// -----BUTTON-----
 .btn
 	position: relative
 	display: flex
@@ -64,8 +63,6 @@
 			border: 1px solid $text
 			box-shadow: 0 0 15px rgba($text, .6)
 
-
-// -----HAMBURGER-----
 .hamburger
 	position: relative
 	display: none
@@ -142,6 +139,9 @@
 				top: 0
 				width: 25px
 				transform: rotate(-45deg)
+
+.wrapper
+	height: 100vh
 
 .header
 	position: fixed
@@ -272,6 +272,26 @@
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
+	height: 100vh
+	overflow: hidden
+	display: flex !important
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	display: flex
+	transition: all 1.2s ease-out
+	opacity: 1
+	background-color: $dark
+
+.slide + .swiper-slide-prev
+	transform: scale3d(0.8, 0.8, 0.8) !important
+	.container
+		opacity: 0.1 !important
+
+.slide + .swiper-slide-next
+	transform: scale3d(0.8, 0.8, 0.8) !important
+	.container
+		opacity: 0.1 !important
 
 .title
 	font-size: 54px
@@ -282,6 +302,8 @@
 
 .hero
 	height: 100vh
+	transition: all 1.2s
+	overflow: hidden
 
 	&__slider
 		height: 100vh
@@ -330,14 +352,8 @@
 	background-color: #1A1A1A
 	background-image: url(../images/about__bg.png)
 	background-size: 17%
-	background-position: 100% 0
+	background-position: 100% 100px
 	min-height: 100vh
-	overflow: hidden
-	display: flex
-	justify-content: center
-	align-items: center
-	flex-direction: column
-	display: flex
 
 	&__slider
 		overflow: visible
@@ -364,12 +380,6 @@
 		margin-bottom: 60px
 
 .bunner
-	overflow: hidden
-	display: flex
-	justify-content: center
-	align-items: center
-	flex-direction: column
-	min-height: 100vh
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
@@ -429,17 +439,9 @@
 			gap: 15px
 
 .position
-	background-color: #1A1A1A
 	background-image: url(../images/about__bg.png)
 	background-size: 17%
-	background-position: 100% 0
-	min-height: 100vh
-	overflow: hidden
-	display: flex
-	justify-content: center
-	align-items: center
-	flex-direction: column
-	display: flex
+	background-position: 100% 100px
 
 	&__grid
 		display: flex
@@ -487,25 +489,19 @@
 		font-family: $fonts
 		font-size: 44px
 		text-shadow: #1A1A1A 2px 0 10px
+		font-weight: 600
 
 	&__btn
 		position: relative
 		top: 150px
 		opacity: 0
 		transition: all .8s
-		
+
 .training
 	background-color: #1A1A1A
 	background-image: url(../images/about__bg.png)
 	background-size: 17%
-	background-position: 100% 0
-	min-height: 100vh
-	overflow: hidden
-	display: flex
-	justify-content: center
-	align-items: center
-	flex-direction: column
-	display: flex
+	background-position: 100% 100px
 
 	&__text
 		margin-bottom: 30px
@@ -598,6 +594,7 @@
 			height: 2px
 			background-color: $text
 			transition: all .6s
+
 
 // -----MODAL-----
 .modal

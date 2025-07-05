@@ -24,6 +24,25 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 		});
 
+	//----------------------SLIDER-wrapper----------------------
+		var swiper = new Swiper(".wrapper", {
+			direction: "vertical",
+			slidesPerView: "auto",
+			slidesPerView: 1,
+			// spaceBetween: 30,
+			simulateTouch: false,
+			mousewheel: true,
+			speed: 1200,
+			pagination: {
+				el: ".swiper-pagination",
+				type: "progressbar",
+			},
+			// pagination: {
+			// 	el: ".swiper-pagination",
+			// 	clickable: true,
+			// },
+		});
+
 		
 	//----------------------SLIDER-about----------------------
 		// var mySwiper = new Swiper('.about__slider', {

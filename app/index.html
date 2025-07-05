@@ -54,9 +54,9 @@
 		</div>
 	</header>
 
-	<section class="hero">
-		<div class="swiper hero__slider">
-			<div class="swiper-wrapper">
+	<div class="wrapper">
+		<div class="swiper-wrapper">
+			<section class="swiper-slide slide hero">
 				<div class="swiper-slide hero__item">
 					<img src="images/hero__bg_2.jpg" alt="" class="hero__img">
 					<div class="hero__content">
@@ -64,6 +64,155 @@
 						<a href="#" class="hero__btn btn btn--hero">Приєднуйся</a>
 					</div>
 				</div>
+			</section>
+
+			<section class="swiper-slide slide section about">
+				<div class="container">
+					<h2 class="title about__title">Про нас</h2>
+					<p class="about__text">
+						Lorem Ipsum є псевдо - латинський текст використовується у веб - дизайні, типографіка, верстка, 
+						і друку замість англійської підкреслити елементи дизайну над змістом. Це також називається заповнювач 
+						( або наповнювач) текст. Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи 
+						в документ або презентацію, наприклад, друкарня, шрифт, або макет. Lorem Ipsum в основному частиною 
+						латинського тексту за класичною автор і філософа Цицерона. Це слова і букви були змінені додаванням 
+						або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи зрозумілою 
+						Латинської більше. У той час як Lorem Ipsum все ще нагадує класичну латину, він насправді не має ніякого 
+						значення. Як текст Цицерона не містить літери K, W, або Z, чужі латина, ці та інші часто вставляється 
+						випадково імітувати типографський Зовнішність європейських мовах, як і орграфов будуть знайдено в оригіналі.
+					</p>
+				</div>
+
+				<div class="swiper about__slider">
+					<div class="swiper-wrapper about__wrapper">
+						<a data-fancybox="gallery" data-src="images/about__1_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__1.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__2_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__2.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__4_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__4.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__6_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__6.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__7_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__7.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__8_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__8.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__0_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__0.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__5_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__5.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__9_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__9.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__10_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__10.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__11_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__11.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__12_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__12.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__13_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__13.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__3_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__3.jpg" alt="" class="about__img">
+						</a>
+					</div>
+				</div>
+			</section>
+
+			<section class="swiper-slide slide section bunner bunner--one">
+				<div class="container bunner__container">
+
+					<h2 class="title bunner__title bunner__title--dark">Є питання?</h2>
+
+					<form action="#" class="form bunner__form bunner__form--dark" method="POST">
+
+						<h3 class="bunner__subtitle bunner__subtitle--dark form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
+
+						<input type="hidden" name="subject" value="Добавить елемент в слайдер">
+
+						<div class="form__item">
+							<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input form__input--dark _req">
+							<label for="formFirstName" class="form__label form__label--dark">Прізвище*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input form__input--dark _req">
+							<label for="formFirstName" class="form__label form__label--dark">Ім'я*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input form__input--dark _req">
+							<label for="formFirstName" class="form__label form__label--dark">Побатькові*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input form__input--dark _req">
+							<label for="formPhone" class="form__label form__label--dark">Телефон*</label>
+						</div>
+
+						<div class="form__item">
+							<div class="form__checkbox">
+								<input id="formAgreement1" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+								<label for="formAgreement1" class="form__checkbox_label">Згода на обробку персональних данних</label>
+							</div>
+						</div>
+						
+						<div class="form__btn">
+							<button type="submit" class="btn form__btn_button form__btn_button--dark" name="submit">Відправити</button>
+						</div>
+
+					</form>
+				</div>
+			</section>
+
+			<section class="swiper-slide slide section position">
+				<div class="container">
+					<h2 class="title position__title">Посади</h2>
+					<div class="position__grid">
+						<div class="position__item position__item--big">
+							<img src="images/position__1.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Оператор <br>ударних БПЛА</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+						<div class="position__item position__item--small">
+							<img src="images/position__2.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Медик взводу</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+						<div class="position__item position__item--small">
+							<img src="images/position__3.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Кулементник</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+						<div class="position__item  position__item--big">
+							<img src="images/position__4.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Гранатометник</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="swiper-slide slide hero">
 				<div class="swiper-slide hero__item">
 					<img src="images/hero__bg_3.jpg" alt="" class="hero__img">
 					<div class="hero__content">
@@ -71,6 +220,147 @@
 						<a href="#" class="hero__btn btn btn--hero">Приєднуйся</a>
 					</div>
 				</div>
+			</section>
+
+			<section class="swiper-slide slide section training">
+				<div class="container">
+					<h2 class="title training__title">Підготовка</h2>
+					<p class="training__text">
+						Lorem Ipsum є псевдо- латинський текст використовується у веб - дизайні, типографіка, верстка, 
+						друку замість англійської підкреслити елементи дизайну над змістом. Це також називається заповнювач 
+						( або наповнювач) текст. Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи 
+						в документ або презентацію, наприклад, друкарня, шрифт, або макет. Lorem Ipsum в основному частиною 
+						латинського тексту за класичною автор і філософа Цицерона. Це слова і букви були змінені додаванням 
+						або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи 
+						зрозумілою Латинської більше. У той час як Lorem Ipsum все ще нагадує класичну латину, він насправді 
+						не має ніякого значення. Як текст Цицерона не містить літери K, W, або Z, чужі латина, ці та інші 
+						часто вставляється випадково імітувати типографський Зовнішність європейських мовах, як і орграфов 
+						будуть знайдено в оригіналі.
+					</p>
+					<div class="training__grid">
+						<div class="training__item training__item--big">
+							<img src="images/training__1.jpg" alt="" class="training__img">
+						</div>
+						<div class="training__item training__item--small">
+							<img src="images/training__2.jpg" alt="" class="training__img">
+						</div>
+						<div class="training__item training__item--big">
+							<img src="images/training__3.jpg" alt="" class="training__img">
+						</div>
+						<div class="training__item training__item--big">
+							<img src="images/training__4.jpg" alt="" class="training__img">
+						</div>
+						<div class="training__item training__item--big">
+							<img src="images/training__5.jpg" alt="" class="training__img">
+						</div>
+						<div class="training__item training__item--small">
+							<img src="images/training__6.jpg" alt="" class="training__img">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="swiper-slide slide section bunner bunner--two">
+				<div class="container bunner__container">
+
+					<form action="#" class="form bunner__form bunner__form--white" method="POST">
+
+						<h2 class="title bunner__title">БАЖАЄШ ПІДПИСАТИ Контракт 18-24</h2>
+						<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
+
+						<input type="hidden" name="subject" value="Добавить елемент в слайдер">
+
+						<div class="form__item">
+							<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Прізвище*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Ім'я*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Побатькові*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
+							<label for="formPhone" class="form__label">Телефон*</label>
+						</div>
+
+						<div class="form__item">
+							<div class="form__checkbox">
+								<input id="formAgreement2" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+								<label for="formAgreement2" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
+							</div>
+						</div>
+
+						<div class="form__btn">
+							<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
+						</div>
+
+					</form>
+				</div>
+			</section>
+
+			<section class="swiper-slide slide section bunner bunner--three">
+				<div class="container bunner__container bunner__container--left">
+
+					<form action="#" class="form bunner__form bunner__form--white" method="POST">
+
+						<h2 class="title bunner__title">Вирішив змінити <br>місце служби</h2>
+						<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
+
+						<input type="hidden" name="subject" value="Добавить елемент в слайдер">
+
+						<div class="form__item">
+							<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Прізвище*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Ім'я*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Побатькові*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
+							<label for="formPhone" class="form__label">Телефон*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formPosition" type="text" name="position" placeholder="Військове звання" class="form__input _req">
+							<label for="formPosition" class="form__label">Військове звання</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formMilitary" type="text" name="military" placeholder="Військова частина звідки плануєш перевід" class="form__input _req">
+							<label for="formMilitary" class="form__label">Військова частина звідки плануєш перевід </label>
+						</div>
+						
+						<div class="form__item">
+							<div class="form__checkbox">
+								<input id="formAgreement3" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+								<label for="formAgreement3" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
+							</div>
+						</div>
+
+						<div class="form__btn">
+							<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
+						</div>
+
+					</form>
+				</div>
+			</section>
+
+			<section class="swiper-slide slide hero">
 				<div class="swiper-slide hero__item">
 					<img src="images/hero__bg_1.jpg" alt="" class="hero__img">
 					<div class="hero__content">
@@ -78,412 +368,128 @@
 						<a href="#" class="hero__btn btn btn--hero">Приєднуйся</a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
+			</section>
 
-	<section class="section about">
-		<div class="container">
-			<h2 class="title about__title">Про нас</h2>
-			<p class="about__text">
-				Lorem Ipsum є псевдо - латинський текст використовується у веб - дизайні, типографіка, верстка, 
-				і друку замість англійської підкреслити елементи дизайну над змістом. Це також називається заповнювач 
-				( або наповнювач) текст. Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи 
-				в документ або презентацію, наприклад, друкарня, шрифт, або макет. Lorem Ipsum в основному частиною 
-				латинського тексту за класичною автор і філософа Цицерона. Це слова і букви були змінені додаванням 
-				або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи зрозумілою 
-				Латинської більше. У той час як Lorem Ipsum все ще нагадує класичну латину, він насправді не має ніякого 
-				значення. Як текст Цицерона не містить літери K, W, або Z, чужі латина, ці та інші часто вставляється 
-				випадково імітувати типографський Зовнішність європейських мовах, як і орграфов будуть знайдено в оригіналі.
-			</p>
-		</div>
+			<section class="swiper-slide slide section bunner bunner--four">
+				<div class="container bunner__container">
 
-		<div class="swiper about__slider">
-			<div class="swiper-wrapper about__wrapper">
-				<a data-fancybox="gallery" data-src="images/about__1_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__1.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__2_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__2.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__4_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__4.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__6_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__6.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__7_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__7.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__8_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__8.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__0_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__0.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__5_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__5.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__9_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__9.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__10_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__10.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__11_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__11.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__12_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__12.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__13_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__13.jpg" alt="" class="about__img">
-				</a>
-				<a data-fancybox="gallery" data-src="images/about__3_1.jpg" class="swiper-slide about__item">
-					<img src="images/about__3.jpg" alt="" class="about__img">
-				</a>
-			</div>
-		</div>
-	</section>
+					<form action="#" class="form bunner__form bunner__form--white" method="POST">
 
-	<section class="section bunner bunner--one">
-		<div class="container bunner__container">
+						<h2 class="title bunner__title">Вирішив повернутися <br>з СЗЧ</h2>
+						<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
 
-			<h2 class="title bunner__title bunner__title--dark">Є питання?</h2>
+						<input type="hidden" name="subject" value="Добавить елемент в слайдер">
 
-			<form action="#" class="form bunner__form bunner__form--dark" method="POST">
+						<div class="form__item">
+							<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Прізвище*</label>
+						</div>
 
-				<h3 class="bunner__subtitle bunner__subtitle--dark form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
+						<div class="form__item">
+							<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Ім'я*</label>
+						</div>
 
-				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
+						<div class="form__item">
+							<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
+							<label for="formFirstName" class="form__label">Побатькові*</label>
+						</div>
 
-				<div class="form__item">
-					<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input form__input--dark _req">
-					<label for="formFirstName" class="form__label form__label--dark">Прізвище*</label>
+						<div class="form__item">
+							<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
+							<label for="formPhone" class="form__label">Телефон*</label>
+						</div>
+
+						<div class="form__item">
+							<input id="formPosition" type="text" name="position" placeholder="Військове звання" class="form__input _req">
+							<label for="formPosition" class="form__label">Військове звання</label>
+						</div>
+
+						<div class="form__item">
+							<div class="form__checkbox">
+								<input id="formAgreement4" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
+								<label for="formAgreement4" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
+							</div>
+						</div>
+
+						<div class="form__btn">
+							<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
+						</div>
+
+					</form>
 				</div>
+			</section>
 
-				<div class="form__item">
-					<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input form__input--dark _req">
-					<label for="formFirstName" class="form__label form__label--dark">Ім'я*</label>
-				</div>
+			<footer class="swiper-slide footer">
+				<div class="footer__container container">
 
-				<div class="form__item">
-					<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input form__input--dark _req">
-					<label for="formFirstName" class="form__label form__label--dark">Побатькові*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input form__input--dark _req">
-					<label for="formPhone" class="form__label form__label--dark">Телефон*</label>
-				</div>
-
-				<div class="form__item">
-					<div class="form__checkbox">
-						<input id="formAgreement1" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement1" class="form__checkbox_label">Згода на обробку персональних данних</label>
+					<div class="footer__col">
+						<a href="/" class="footer__logo">
+							<img src="images/footer__logo.svg" alt="">
+						</a>
 					</div>
-				</div>
-				
-				<div class="form__btn">
-					<button type="submit" class="btn form__btn_button form__btn_button--dark" name="submit">Відправити</button>
-				</div>
 
-			</form>
-		</div>
-	</section>
-
-	<section class="section position">
-		<div class="container">
-			<h2 class="title position__title">Посади</h2>
-			<div class="position__grid">
-				<div class="position__item position__item--big">
-					<img src="images/position__1.jpg" alt="" class="position__img">
-					<div class="position__content">
-						<h3 class="position__subtitle">Оператор <br>ударних БПЛА</h3>
-						<a href="#" class="btn position__btn">Приєднуйся</a>
+					<div class="footer__col">
+						<h3 class="footer__title">МЕНЮ САЙТА </h3>
+						<ul class="footer__nav">
+							<li class="footer__item">
+								<a href="/" class="footer__link">Про підрозділ</a>
+							</li>
+							<li class="footer__item">
+								<a href="#step" class="footer__link">Підготовка</a>
+							</li>
+							<li class="footer__item">
+								<a href="#about" class="footer__link">Посади</a>
+							</li>
+							<li class="footer__item">
+								<a href="#about" class="footer__link">Контракт 18 - 24</a>
+							</li>
+							<li class="footer__item">
+								<a href="#about" class="footer__link">Контакти</a>
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="position__item position__item--small">
-					<img src="images/position__2.jpg" alt="" class="position__img">
-					<div class="position__content">
-						<h3 class="position__subtitle">Медик взводу</h3>
-						<a href="#" class="btn position__btn">Приєднуйся</a>
+
+					<div class="footer__col">
+						<h3 class="footer__title">СЛІДКУЙ ЗА НАМИ</h3>
+						<ul class="footer__nav">
+							<li class="footer__item">
+								<a href="/" class="footer__link">Іnstagram</a>
+							</li>
+							<li class="footer__item">
+								<a href="#step" class="footer__link">Facebook</a>
+							</li>
+							<li class="footer__item">
+								<a href="#about" class="footer__link">Work.ua</a>
+							</li>
+							<li class="footer__item">
+								<a href="#about" class="footer__link">Robota.ua</a>
+							</li>
+							<li class="footer__item">
+								<a href="#about" class="footer__link">Lobbyx.army</a>
+							</li>
+						</ul>
 					</div>
-				</div>
-				<div class="position__item position__item--small">
-					<img src="images/position__3.jpg" alt="" class="position__img">
-					<div class="position__content">
-						<h3 class="position__subtitle">Кулементник</h3>
-						<a href="#" class="btn position__btn">Приєднуйся</a>
+
+					<div class="footer__col">
+						<h3 class="footer__title">З ПИТАНЬ РЕКРУТИНГУ</h3>
+						<ul class="footer__nav">
+							<li class="footer__item">
+								<a href="tel:+380660000000" class="footer__link">+38 (066) 000 00 00</a>
+							</li>
+							<li class="footer__item">
+								<a href="tel:+380660000000" class="footer__link">+38 (066) 000 00 00</a>
+							</li>
+							<li class="footer__item">
+								<a href="mailto:recruiting-4@92.army" class="footer__link">recruiting-4@92.army</a>
+							</li>
+						</ul>
 					</div>
+
 				</div>
-				<div class="position__item  position__item--big">
-					<img src="images/position__4.jpg" alt="" class="position__img">
-					<div class="position__content">
-						<h3 class="position__subtitle">Гранатометник</h3>
-						<a href="#" class="btn position__btn">Приєднуйся</a>
-					</div>
-				</div>
-			</div>
+			</footer>
 		</div>
-	</section>
-
-	<section class="section bunner bunner--two">
-		<div class="container bunner__container">
-
-			<form action="#" class="form bunner__form bunner__form--white" method="POST">
-
-				<h2 class="title bunner__title">БАЖАЄШ ПІДПИСАТИ Контракт 18-24</h2>
-				<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
-
-				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
-
-				<div class="form__item">
-					<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Прізвище*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Ім'я*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Побатькові*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
-					<label for="formPhone" class="form__label">Телефон*</label>
-				</div>
-
-				<div class="form__item">
-					<div class="form__checkbox">
-						<input id="formAgreement2" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement2" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
-					</div>
-				</div>
-
-				<div class="form__btn">
-					<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
-				</div>
-
-			</form>
-		</div>
-	</section>
-
-	<section class="section training">
-		<div class="container">
-			<h2 class="title training__title">Посади</h2>
-			<p class="training__text">
-				Lorem Ipsum є псевдо- латинський текст використовується у веб - дизайні, типографіка, верстка, 
-				 друку замість англійської підкреслити елементи дизайну над змістом. Це також називається заповнювач 
-				 ( або наповнювач) текст. Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи 
-				 в документ або презентацію, наприклад, друкарня, шрифт, або макет. Lorem Ipsum в основному частиною 
-				 латинського тексту за класичною автор і філософа Цицерона. Це слова і букви були змінені додаванням 
-				 або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи 
-				 зрозумілою Латинської більше. У той час як Lorem Ipsum все ще нагадує класичну латину, він насправді 
-				 не має ніякого значення. Як текст Цицерона не містить літери K, W, або Z, чужі латина, ці та інші 
-				 часто вставляється випадково імітувати типографський Зовнішність європейських мовах, як і орграфов 
-				 будуть знайдено в оригіналі.
-			</p>
-			<div class="training__grid">
-				<div class="training__item training__item--big">
-					<img src="images/training__1.jpg" alt="" class="training__img">
-				</div>
-				<div class="training__item training__item--small">
-					<img src="images/training__2.jpg" alt="" class="training__img">
-				</div>
-				<div class="training__item training__item--big">
-					<img src="images/training__3.jpg" alt="" class="training__img">
-				</div>
-				<div class="training__item training__item--big">
-					<img src="images/training__4.jpg" alt="" class="training__img">
-				</div>
-				<div class="training__item training__item--big">
-					<img src="images/training__5.jpg" alt="" class="training__img">
-				</div>
-				<div class="training__item training__item--small">
-					<img src="images/training__6.jpg" alt="" class="training__img">
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="section bunner bunner--three">
-		<div class="container bunner__container bunner__container--left">
-
-			<form action="#" class="form bunner__form bunner__form--white" method="POST">
-
-				<h2 class="title bunner__title">Вирішив змінити <br>місце служби</h2>
-				<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
-
-				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
-
-				<div class="form__item">
-					<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Прізвище*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Ім'я*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Побатькові*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
-					<label for="formPhone" class="form__label">Телефон*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formPosition" type="text" name="position" placeholder="Військове звання" class="form__input _req">
-					<label for="formPosition" class="form__label">Військове звання</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formMilitary" type="text" name="military" placeholder="Військова частина звідки плануєш перевід" class="form__input _req">
-					<label for="formMilitary" class="form__label">Військова частина звідки плануєш перевід </label>
-				</div>
-				
-				<div class="form__item">
-					<div class="form__checkbox">
-						<input id="formAgreement3" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement3" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
-					</div>
-				</div>
-
-				<div class="form__btn">
-					<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
-				</div>
-
-			</form>
-		</div>
-	</section>
-
-	<section class="section bunner bunner--four">
-		<div class="container bunner__container">
-
-			<form action="#" class="form bunner__form bunner__form--white" method="POST">
-
-				<h2 class="title bunner__title">Вирішив повернутися <br>з СЗЧ</h2>
-				<h3 class="bunner__subtitle form__title">ЗАЛИШ СВІЙ КОНТАКТ І МИ ЗВЯЖЕМОСЬ З ТОБОЮ</h3>
-
-				<input type="hidden" name="subject" value="Добавить елемент в слайдер">
-
-				<div class="form__item">
-					<input id="formFirstName" type="text" name="FirstName" placeholder="Прізвище*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Прізвище*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formSurname" type="text" name="Surname" placeholder="Ім'я*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Ім'я*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formMiddleName" type="text" name="MiddleName" placeholder="Прізвище*" class="form__input _req">
-					<label for="formFirstName" class="form__label">Побатькові*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formPhone" type="tel" name="phone" placeholder="Телефон*" class="form__input _req">
-					<label for="formPhone" class="form__label">Телефон*</label>
-				</div>
-
-				<div class="form__item">
-					<input id="formPosition" type="text" name="position" placeholder="Військове звання" class="form__input _req">
-					<label for="formPosition" class="form__label">Військове звання</label>
-				</div>
-
-				<div class="form__item">
-					<div class="form__checkbox">
-						<input id="formAgreement4" checked type="checkbox" name="agreement" class="form__checkbox_input _req">
-						<label for="formAgreement4" class="form__checkbox_label form__checkbox_label--dark">Згода на обробку персональних данних</label>
-					</div>
-				</div>
-
-				<div class="form__btn">
-					<button type="submit" class="btn form__btn_button" name="submit">Відправити</button>
-				</div>
-
-			</form>
-		</div>
-	</section>
-
-	<footer class="footer">
-		<div class="footer__container container">
-
-			<div class="footer__col">
-				<a href="/" class="footer__logo">
-					<img src="images/footer__logo.svg" alt="">
-				</a>
-			</div>
-
-			<div class="footer__col">
-				<h3 class="footer__title">МЕНЮ САЙТА </h3>
-				<ul class="footer__nav">
-					<li class="footer__item">
-						<a href="/" class="footer__link">Про підрозділ</a>
-					</li>
-					<li class="footer__item">
-						<a href="#step" class="footer__link">Підготовка</a>
-					</li>
-					<li class="footer__item">
-						<a href="#about" class="footer__link">Посади</a>
-					</li>
-					<li class="footer__item">
-						<a href="#about" class="footer__link">Контракт 18 - 24</a>
-					</li>
-					<li class="footer__item">
-						<a href="#about" class="footer__link">Контакти</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="footer__col">
-				<h3 class="footer__title">СЛІДКУЙ ЗА НАМИ</h3>
-				<ul class="footer__nav">
-					<li class="footer__item">
-						<a href="/" class="footer__link">Іnstagram</a>
-					</li>
-					<li class="footer__item">
-						<a href="#step" class="footer__link">Facebook</a>
-					</li>
-					<li class="footer__item">
-						<a href="#about" class="footer__link">Work.ua</a>
-					</li>
-					<li class="footer__item">
-						<a href="#about" class="footer__link">Robota.ua</a>
-					</li>
-					<li class="footer__item">
-						<a href="#about" class="footer__link">Lobbyx.army</a>
-					</li>
-				</ul>
-			</div>
-
-			<div class="footer__col">
-				<h3 class="footer__title">З ПИТАНЬ РЕКРУТИНГУ</h3>
-				<ul class="footer__nav">
-					<li class="footer__item">
-						<a href="tel:+380660000000" class="footer__link">+38 (066) 000 00 00</a>
-					</li>
-					<li class="footer__item">
-						<a href="tel:+380660000000" class="footer__link">+38 (066) 000 00 00</a>
-					</li>
-					<li class="footer__item">
-						<a href="mailto:recruiting-4@92.army" class="footer__link">recruiting-4@92.army</a>
-					</li>
-				</ul>
-			</div>
-
-		</div>
-	</footer>
+	</div>
 
 	<div class="modal" id="modal__edits">
 		<form action="#" class="modal__form form" method="POST">
