@@ -46,24 +46,39 @@ document.addEventListener("DOMContentLoaded", function() {
 		const slideLinks = document.querySelectorAll('.header__link');
 
 		swiper.on('slideChange', function () {
-			const activeSlide = swiper.slides[swiper.activeIndex];
-			console.log(activeSlide);
-			const dataAttribute = activeSlide.getAttribute('data-slide');
-			console.log(dataAttribute);
+			const activeSlide = swiper.slides[swiper.activeIndex]
+			const dataAttribute = activeSlide.getAttribute('data-slide')
 
 			slideLinks.forEach(function(link) {
-				const slideIndex = parseInt(link.getAttribute('data-slide'));
-				
+
+				const slideIndex = parseInt(link.getAttribute('data-slide'))
 				if(dataAttribute == slideIndex) {
 					slideLinks.forEach(function(item) {
 						item.classList.remove('header__link--active')
-						console.log(item);
 					});
 					link.classList.add('header__link--active')
-					swiper.mousewheel.enable();
-				}
+				} else (
+					link.classList.remove('header__link--active')
+				)
+
 			});
 
+		});
+
+		slideLinks.forEach(function(link) {
+			link.addEventListener('click', function(e) {
+				e.preventDefault();
+				const slideIndex = parseInt(this.getAttribute('data-slide'));
+				
+				swiper.slideTo(slideIndex);
+
+				slideLinks.forEach(function(item) {
+					item.classList.remove('header__link--active')
+				});
+				this.classList.add('header__link--active')
+				console.log(this);
+
+			});
 		});
 	
 	// //----------------------SLIDER-about----------------------
