@@ -143,19 +143,26 @@
 .wrapper
 	height: 100vh
 
+	&__pagination
+		margin-top: 70px
+		height: calc(100vh - 70px) !important
+		width: 10px !important
+		left: auto !important
+		right: 0 !important
+
+	.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
+		background-color: $text !important
+
 .header
 	position: fixed
 	top: -2px
 	right: 0
 	left: 0
-	padding: 15px 0
+	padding: 5px 0
 	z-index: 1000
 	background-color: rgba(#1A1A1A, .95)
 	box-shadow: 0 0 10px rgba(255, 255, 255, .4)
 	transition: all .6s
-
-	&--active
-		padding: 5px
 
 	&--white
 		background-color: rgba(#fff, .9)
@@ -236,7 +243,7 @@
 	&__link
 		position: relative
 		color: $text
-		font-size: 18px
+		font-size: 16px
 		text-decoration: none
 		text-transform: uppercase
 		color: $text
@@ -247,7 +254,7 @@
 		&:hover
 			color: $accent
 			&::before
-				width: 110%
+				width: 100%
 				background-color: $accent
 
 		&:active
@@ -279,7 +286,7 @@
 	align-items: center
 	flex-direction: column
 	display: flex
-	transition: all 1.2s ease-out
+	transition: all 1s ease-out
 	opacity: 1
 	background-color: $dark
 
@@ -294,9 +301,9 @@
 		opacity: 0.1 !important
 
 .title
-	font-size: 54px
+	font-size: 46px
 	margin-left: 30px
-	margin-bottom: 45px
+	margin-bottom: 20px
 	color: $text
 	text-shadow: $dark 2px 0 5px
 
@@ -321,7 +328,7 @@
 
 	&__title
 		text-align: center
-		font-size: 90px
+		font-size: 80px
 		text-shadow: #1A1A1A 2px 0 10px
 		margin-bottom: 20px
 
@@ -422,6 +429,7 @@
 		color: $text
 		text-align: center
 		text-shadow: $dark 2px 0 2px
+		font-size: 18px
 
 		&--dark
 			color: $dark
@@ -431,7 +439,7 @@
 		flex-direction: column
 		justify-content: center
 		align-items: center
-		gap: 30px
+		gap: 20px
 		max-width: 500px
 		width: 100%
 
@@ -452,6 +460,7 @@
 	&__item
 		position: relative
 		overflow: hidden
+		height: 300px
 
 		&--big
 			width: 65%
@@ -504,7 +513,7 @@
 	background-position: 100% 100px
 
 	&__text
-		margin-bottom: 30px
+		margin-bottom: 20px
 
 	&__grid
 		display: flex
@@ -536,8 +545,9 @@
 	background-color: $dark
 	background-image: url(../images/footer__bg.png)
 	background-repeat: no-repeat
-	background-position: 60% 0
-	padding: 30px 0
+	background-position: 60% 150px
+	padding: 150px 0
+	transition: all .6s
 
 	&__container
 		+between
@@ -576,7 +586,7 @@
 		&:hover
 			color: $accent
 			&::before
-				width: 120%
+				width: 100%
 				background-color: $accent
 
 		&:active
@@ -610,7 +620,7 @@
 	min-height: 100vh
 	padding: 30px
 	z-index: 10000
-	background-color: rgba(#1a1a1d, .7)
+	background-color: rgba($dark, .7)
 	overflow: auto
 	padding: 40px 0
 	transition: all .6s
@@ -625,11 +635,11 @@
 
 	&__close
 		position: absolute
-		right: 0
-		top: -40px
+		right: 20px
+		top: 20px
 		display: block
-		width: 30px
-		height: 30px
+		width: 50px
+		height: 50px
 		border-radius: 50%
 		border: none
 		cursor: pointer
@@ -642,10 +652,9 @@
 
 		&:hover
 			outline: none
-			transform: rotate(90deg)
 
 			span
-				background: $accent
+				background: red
 
 		span
 			display: block
@@ -655,8 +664,8 @@
 			background: #ffffff
 			transition: all .6s
 			border-radius: 4px
-			height: 22px
-			width: 3px
+			height: 35px
+			width: 4px
 
 			&:first-child
 				transform: translate(-50%, -50%) rotate(45deg)
@@ -665,14 +674,22 @@
 				transform: translate(-50%, -50%) rotate(-45deg)
 
 	&__form
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		align-items: center
 		z-index: 1
-		background-color: #ffffff
-		box-shadow: 0 0 16px rgba(0, 0, 0, 0.29)
+		background-color: $dark
+		background-image: url(../images/footer__bg.png)
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		background-size: 95%
+		padding: 150px 0
+		box-shadow: 0 0 16px rgba($text, 0.29)
 		width: 100%
-		max-width: 500px
+		max-width: 900px
 		height: auto
 		padding: 50px
-		border: 1px solid #8d8d8e
 		margin: auto
 		transform: translate(0, -150px)
 		transition: all .6s
@@ -687,17 +704,20 @@
 		+r(576)
 			padding: 25px
 
-	h3
+	&__title
 		text-transform: none
-		font-size: 1.3em
+		font-size: 34px
 		margin-bottom: 20px
 		text-align: center
 		font-weight: 600
+	
+	&__item
+		max-width: 500px
+		margin-bottom: 20px
 
 // -----FORM-----
 .form
 	position: relative
-	max-width: 500px
 	width: 100%
 	z-index: 1
 
@@ -909,6 +929,12 @@
 			&--dark
 				color: $text
 
+				&::before
+					background-color: $text
+					
+				&::after
+					background-color: $dark
+
 		&_input
 			display: none
 
@@ -939,7 +965,7 @@
 
 	&__error
 		position: absolute
-		bottom: -18px
+		bottom: -22px
 		right: 25px
 		left: 25px
 		transition: all .3s
@@ -950,7 +976,7 @@
 		background-color: red
 		border-radius: 10px
 		z-index: 1
-		font-size: 12px
+		font-size: 14px
 
 		&::before
 			content: ''
