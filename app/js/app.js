@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			direction: "vertical",
 			slidesPerView: "auto",
 			slidesPerView: 1,
-			// spaceBetween: 30,
 			simulateTouch: false,
 			mousewheel: true,
 			speed: 1200,
@@ -37,10 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: ".swiper-pagination",
 				type: "progressbar",
 			},
-			// pagination: {
-			// 	el: ".swiper-pagination",
-			// 	clickable: true,
-			// },
 		});
 
 		const slideLinks = document.querySelectorAll('.header__link');
