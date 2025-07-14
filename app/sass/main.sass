@@ -547,6 +547,84 @@
 		height: 100%
 		transition: all 10s
 
+.accordion
+	padding: 20px 0
+	margin-bottom: 10px
+	border-bottom: 1px solid #161B21
+
+	&:last-child
+		margin-bottom: 0
+
+	&__header
+		+transition
+		display: flex
+		align-items: center
+		justify-content: space-between
+		cursor: pointer
+		font-weight: 700
+
+		span
+			+transition
+			position: relative
+			width: 32px
+			height: 32px
+			border-radius: 50%
+			border: 1px solid $text
+
+			&::before,
+			&::after
+				+transition
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				background-color: $text
+
+			&::before
+				width: 10px
+				height: 1px
+			
+			&::after
+				height: 10px
+				width: 1px
+
+	&__content
+		+transition
+		overflow: hidden
+		color: #b5acac
+		padding-left: 40px
+		height: 0
+
+		+r(1200)
+			padding-left: 20px
+
+		+r(767)
+			padding-left: 10px
+
+	&--active
+
+		.accordion
+			&__header
+				margin-bottom: 20px
+
+				span
+					background-color: $accent
+					border-color: $accent
+
+					&::before
+						background-color: #ffffff
+
+					&::after
+						background-color: transparent
+
+			&__content
+				opacity: 1
+
+.question
+	min-height: fit-content
+	overflow: auto
+
 .footer
 	background-color: $dark
 	background-image: url(../images/footer__bg.png)
@@ -610,6 +688,7 @@
 			height: 2px
 			background-color: $text
 			transition: all .6s
+
 
 
 // -----MODAL-----

@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			const dataAttribute = activeSlide.getAttribute('data-slide')
 
 			slideLinks.forEach(function(link) {
-
 				const slideIndex = parseInt(link.getAttribute('data-slide'))
 				if(dataAttribute == slideIndex) {
 					slideLinks.forEach(function(item) {
@@ -64,15 +63,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			link.addEventListener('click', function(e) {
 				e.preventDefault();
 				const slideIndex = parseInt(this.getAttribute('data-slide'));
-				
 				swiper.slideTo(slideIndex);
-
 				slideLinks.forEach(function(item) {
 					item.classList.remove('header__link--active')
 				});
 				this.classList.add('header__link--active')
-				console.log(this);
-
 			});
 		});
 	
@@ -391,6 +386,37 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		};
 		forms('.form');
+
+	//------------------------------ACCORDIONS---------------------------
+		const accordions = (accordionSelector) => {
+			const	accordion = document.querySelectorAll(accordionSelector);
+
+			accordion.forEach(item => {
+				const accordionClick = item.querySelector('.accordion__header'),
+							accordionContent = item.querySelector('.accordion__content');
+
+				accordionClick.addEventListener('click', (e) => {
+					if(!item.classList.contains('accordion--active')) {
+
+						item.classList.add('accordion--active')
+						accordionContent.style.height = "auto"
+						var height = accordionContent.clientHeight + "px"
+						accordionContent.style.height = "0px"
+
+						setTimeout(() => {
+							accordionContent.style.height = height
+						}, 0)
+
+						} else {
+							accordionContent.style.height = "0px"
+								item.classList.remove('accordion--active')
+					}
+
+				});
+			});
+
+		};
+		accordions('.accordion');
 
 });
 	
