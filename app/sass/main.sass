@@ -285,7 +285,7 @@
 	background-size: cover
 	background-position: center
 	background-repeat: no-repeat
-	height: 100vh
+	// height: 100vh
 	overflow: hidden
 	display: flex !important
 	justify-content: center
@@ -314,7 +314,7 @@
 	text-shadow: $dark 2px 0 5px
 
 .hero
-	height: 100vh
+	// height: 100vh
 	transition: all 1.2s
 	overflow: hidden
 
@@ -621,9 +621,9 @@
 			&__content
 				opacity: 1
 
-.question
-	min-height: fit-content
-	overflow: auto
+// .question
+// 	min-height: fit-content
+// 	overflow: auto
 
 .footer
 	background-color: $dark
@@ -689,6 +689,29 @@
 			background-color: $text
 			transition: all .6s
 
+
+.slider-track
+	overflow: hidden
+	width: 100%
+
+
+.slider
+	display: flex
+	animation: scroll 20s linear infinite
+
+.slider.paused
+	animation-play-state: paused
+
+.slide
+	flex-shrink: 0
+	width: 200px
+	margin-right: 20px
+
+@keyframes scroll
+	0%
+		transform: translateX(0)
+	100%
+		transform: translateX(-50%)
 
 
 // -----MODAL-----

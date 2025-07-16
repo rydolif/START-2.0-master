@@ -19,9 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
 			slidesPerView: 4,
 			spaceBetween: 30,
 			loop: true,
+			speed: 5000, // тривалість однієї анімації
 			autoplay: {
-				delay: 4000,
+				delay: -5000, // без паузи між прокрутками
+				// disableOnInteraction: false,
 			},
+			freeMode: true,
+			freeModeMomentum: false,
 		});
 
 	//----------------------SLIDER-wrapper----------------------
