@@ -19,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			slidesPerView: 4,
 			spaceBetween: 30,
 			loop: true,
-			speed: 5000, // тривалість однієї анімації
+			speed: 9000, // тривалість однієї анімації
 			autoplay: {
-				delay: -5000, // без паузи між прокрутками
-				// disableOnInteraction: false,
+				delay: 0, // без паузи між прокрутками
 			},
 			freeMode: true,
 			freeModeMomentum: false,
@@ -75,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		});
 	
-	// //----------------------SLIDER-about----------------------
+	//----------------------SLIDER-about----------------------
 	// 	// var mySwiper = new Swiper('.about__slider', {
 	// 	// 	slidesPerView: 4,
 	// 	// 	spaceBetween: 30,
@@ -346,10 +345,13 @@ document.addEventListener("DOMContentLoaded", function() {
 				})
 
 				function formErorrRemove() {
-					let formErorrRemove = document.querySelectorAll('.form__error')
-					console.log('error')
-					formErorrRemove.forEach(item => {
+					let formErorrDelet = document.querySelectorAll('.form__error')
+					let formErorrRemove = document.querySelectorAll('.form__input')
+					formErorrDelet.forEach(item => {
 						item.remove();
+					})
+					formErorrRemove.forEach(item => {
+						item.classList.remove('_error');
 					})
 				}
 
@@ -392,35 +394,35 @@ document.addEventListener("DOMContentLoaded", function() {
 		forms('.form');
 
 	//------------------------------ACCORDIONS---------------------------
-		const accordions = (accordionSelector) => {
-			const	accordion = document.querySelectorAll(accordionSelector);
+		// const accordions = (accordionSelector) => {
+		// 	const	accordion = document.querySelectorAll(accordionSelector);
 
-			accordion.forEach(item => {
-				const accordionClick = item.querySelector('.accordion__header'),
-							accordionContent = item.querySelector('.accordion__content');
+		// 	accordion.forEach(item => {
+		// 		const accordionClick = item.querySelector('.accordion__header'),
+		// 					accordionContent = item.querySelector('.accordion__content');
 
-				accordionClick.addEventListener('click', (e) => {
-					if(!item.classList.contains('accordion--active')) {
+		// 		accordionClick.addEventListener('click', (e) => {
+		// 			if(!item.classList.contains('accordion--active')) {
 
-						item.classList.add('accordion--active')
-						accordionContent.style.height = "auto"
-						var height = accordionContent.clientHeight + "px"
-						accordionContent.style.height = "0px"
+		// 				item.classList.add('accordion--active')
+		// 				accordionContent.style.height = "auto"
+		// 				var height = accordionContent.clientHeight + "px"
+		// 				accordionContent.style.height = "0px"
 
-						setTimeout(() => {
-							accordionContent.style.height = height
-						}, 0)
+		// 				setTimeout(() => {
+		// 					accordionContent.style.height = height
+		// 				}, 0)
 
-						} else {
-							accordionContent.style.height = "0px"
-								item.classList.remove('accordion--active')
-					}
+		// 				} else {
+		// 					accordionContent.style.height = "0px"
+		// 						item.classList.remove('accordion--active')
+		// 			}
 
-				});
-			});
+		// 		});
+		// 	});
 
-		};
-		accordions('.accordion');
+		// };
+		// accordions('.accordion');
 
 });
 	

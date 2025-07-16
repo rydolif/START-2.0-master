@@ -621,10 +621,6 @@
 			&__content
 				opacity: 1
 
-// .question
-// 	min-height: fit-content
-// 	overflow: auto
-
 .footer
 	background-color: $dark
 	background-image: url(../images/footer__bg.png)
@@ -688,30 +684,6 @@
 			height: 2px
 			background-color: $text
 			transition: all .6s
-
-
-.slider-track
-	overflow: hidden
-	width: 100%
-
-
-.slider
-	display: flex
-	animation: scroll 20s linear infinite
-
-.slider.paused
-	animation-play-state: paused
-
-.slide
-	flex-shrink: 0
-	width: 200px
-	margin-right: 20px
-
-@keyframes scroll
-	0%
-		transform: translateX(0)
-	100%
-		transform: translateX(-50%)
 
 
 // -----MODAL-----
@@ -873,6 +845,7 @@
 		border-bottom: 1px solid $text
 		font-size: 22px
 		color: $text
+		box-shadow: 0 2px 0 0 rgba($text, .3)
 
 		+r(1400)
 			font-size: 18px
@@ -880,22 +853,22 @@
 		+r(1200)
 			font-size: 16px
 
-		&--dark
-			border-bottom: 1px solid $dark
-			color: $dark
-
-			&:hover
-				box-shadow: 0 6px 1px 0 rgba($dark, .1)
-
-			&::placeholder
-				color: $dark
-
 		&::placeholder
 			line-height: 50px
 			color: transparent
 
 		&:hover
-			box-shadow: 0 6px 1px 0 rgba(#000, .1)
+			box-shadow: 0 5px 0 0 rgba($text, .3)
+
+		&--dark
+			border-bottom: 1px solid $dark
+			color: $dark
+
+			&:hover
+				box-shadow: 0 6px 1px 0 rgba($text, .1)
+
+			&::placeholder
+				color: transparent
 
 		&:hover + label,
 		&:focus + label,
@@ -905,7 +878,7 @@
 			font-size: 14px
 
 		&._error
-			box-shadow: 0 8px 1px 0 rgba(#ff0000, .3)
+			box-shadow: 0 17px 0 0 rgba(#ff0000, .4)
 			border-bottom: 1px solid #ff0000
 
 	&__textarea
@@ -996,6 +969,7 @@
 
 	&__checkbox
 		padding: 0 15px
+		height: 25px
 
 		&._error
 			.form__checkbox_label::before
@@ -1073,7 +1047,7 @@
 
 	&__error
 		position: absolute
-		bottom: -22px
+		bottom: -15px
 		right: 25px
 		left: 25px
 		transition: all .3s
@@ -1081,21 +1055,23 @@
 		color: #ffffff
 		text-align: center
 		font-weight: 600
-		background-color: red
+		// background-color: rgba(#ff0000, .4)
 		border-radius: 10px
 		z-index: 1
-		font-size: 14px
+		font-size: 10px
+		text-shadow: $dark 1px 0 1px
 
-		&::before
-			content: ''
-			position: absolute
-			left: 50%
-			top: -8px
-			margin-left: -2px
-			border-bottom: 4px solid red
-			border-left: 4px solid transparent
-			border-right: 4px solid transparent
-			border-top: 4px solid transparent
+
+		// &::before
+		// 	content: ''
+		// 	position: absolute
+		// 	left: 50%
+		// 	top: -8px
+		// 	margin-left: -2px
+		// 	border-bottom: 4px solid red
+		// 	border-left: 4px solid transparent
+		// 	border-right: 4px solid transparent
+		// 	border-top: 4px solid transparent
 
 	&__nav
 
@@ -1125,3 +1101,7 @@
 
 			img
 				max-width: 50%
+
+
+.swiper-free-mode>.swiper-wrapper
+	transition-timing-function: linear !important
