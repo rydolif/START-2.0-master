@@ -6,17 +6,17 @@ body
 	+r(1600)
 		font-size: 16px
 
-	+r(1400)
+	+r(1440)
 		font-size: 14px
 
 .container
 	width: 100%
-	max-width: 1400px
+	max-width: 1440px
 	padding: 0 15px
 	margin: 0 auto
 	transition: all 1.6s
 
-	+r(1400)
+	+r(1440)
 		max-width: 1200px
 
 	+r(1200)
@@ -245,7 +245,7 @@ body
 		display: flex
 		gap: 40px
 
-		+r(1400)
+		+r(1440)
 			gap: 20px
 
 	&__item
@@ -310,7 +310,7 @@ body
 	opacity: 1
 	background-color: $dark
 
-	+r(1400)
+	+r(1440)
 		padding: 70px 0 20px
 
 	+r(1200)
@@ -323,7 +323,7 @@ body
 	color: $text
 	text-shadow: $dark 2px 0 5px
 
-	+r(1400)
+	+r(1440)
 		font-size: 36px
 
 	+r(1200)
@@ -353,7 +353,7 @@ body
 		text-shadow: #1A1A1A 2px 0 10px
 		margin-bottom: 20px
 
-		+r(1400)
+		+r(1440)
 			font-size: 60px
 
 		+r(1200)
@@ -365,7 +365,7 @@ body
 		font-size: 28px
 		margin: 0 auto
 
-		+r(1400)
+		+r(1440)
 			height: 60px
 			width: 500px
 			font-size: 24px
@@ -381,12 +381,8 @@ body
 		left: 50%
 		transform: translate(-50%, -50%)
 		min-height: 100vh
-		width: 100vw
+		min-width: 100vw
 		height: auto
-
-		+r(1600)
-			max-width: 100vw
-
 
 	&__content
 		position: absolute
@@ -428,7 +424,7 @@ body
 	&__text
 		margin-bottom: 60px
 
-		+r(1400)
+		+r(1440)
 			margin-bottom: 40px
 
 		+r(1200)
@@ -453,15 +449,19 @@ body
 	&--four
 		background-image: url(../images/bunner--four.jpg)
 
+		+r(1440)
+			background-position: 30% 0
+
 	&__container
 		display: flex
 		flex-direction: column
 		align-items: flex-end
 		justify-content: center
 		gap: 20px
+		padding: 0 40px
 
 		+r(1600)
-			gap: 5px
+			gap: 10px
 
 		&--left
 			align-items: flex-start
@@ -469,7 +469,6 @@ body
 	&__title
 		text-align: center
 		margin: 0
-		width: 800px
 		color: $text
 
 		+r(1600)
@@ -485,14 +484,13 @@ body
 		text-align: center
 		text-shadow: $dark 2px 0 2px
 		font-size: 18px
-		width: 800px
+		width: 500px
 
 		+r(1600)
 			font-size: 16px
 
 		&--dark
 			color: $dark
-			width: 500px
 
 	&__form
 		display: flex
@@ -502,11 +500,11 @@ body
 		max-width: 500px
 		width: 100%
 
-		+r(1400)
-			gap: 15px
-
 		&_item
 			margin-bottom: 25px
+
+			+r(1440)
+				margin-bottom: 20px
 
 .position
 	background-image: url(../images/about__bg.png)
@@ -518,11 +516,18 @@ body
 		flex-wrap: wrap
 		gap: 15px
 		width: 100%
+		margin: 0 auto
+
+		+r(1600)
+			width: 80%
 
 	&__item
 		position: relative
 		overflow: hidden
 		height: 300px
+
+		+r(1600)
+			height: 250px
 
 		&--big
 			width: 65%
@@ -833,7 +838,7 @@ body
 			padding: 80px 0
 			max-width: 700px
 
-		+r(1400)
+		+r(1440)
 			padding: 40px 0
 			max-width: 600px
 
@@ -855,7 +860,7 @@ body
 		font-weight: 600
 		width: 100%
 
-		+r(1400)
+		+r(1440)
 			font-size: 28px
 
 		+r(1200)
@@ -904,6 +909,12 @@ body
 		color: $text
 		z-index: -1
 		transition: all .6s
+		
+		+r(1600)
+			font-size: 18px
+
+		+r(1440)
+			font-size: 16px
 
 		&--dark
 			color: $dark
@@ -920,10 +931,10 @@ body
 		color: $text
 		box-shadow: 0 2px 0 0 rgba($text, .3)
 
-		+r(1400)
+		+r(1600)
 			font-size: 18px
 
-		+r(1200)
+		+r(1440)
 			font-size: 16px
 
 		&::placeholder
