@@ -393,24 +393,18 @@ body
 			width: 400px
 			font-size: 22px
 
-	// &__img
-	// 	position: absolute
-	// 	top: 50%
-	// 	left: 50%
-	// 	transform: translate(-50%, -50%)
-	// 	min-height: 100vh
-	// 	min-width: 100vw
-	// 	height: auto
+	&__video
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: -1
 
-	// 	+r(1200)
-	// 		width: auto
-	// 		min-height: 100vh
-
-	// 	+r(992)
-	// 		min-width: 100%
-	// 		max-width: 150%
-	// 		height: auto !important
-	// 		// min-height: 100vh
+		video
+			width: 100%
+			height: 100%
+			object-fit: cover
 
 	&__content
 		position: absolute
@@ -641,13 +635,13 @@ body
 	&__subtitle
 		font-family: $fonts
 		font-size: 44px
-		text-shadow: #1A1A1A 2px 0 10px
+		text-shadow: $dark 2px 0 10px
 		font-weight: 600
 
-		+r(1440)
+		+r(1600)
 			font-size: 40px
 
-		+r(1200)
+		+r(1440)
 			font-size: 36px
 
 		+r(992)
@@ -675,7 +669,7 @@ body
 		gap: 15px 1%
 		width: 100%
 
-		+r(1200)
+		+r(1600)
 			width: 80%
 			margin: 0 auto
 
@@ -692,8 +686,11 @@ body
 		overflow: hidden
 		height: 255px
 
+		+r(1600)
+			height: 200px
+			
 		+r(1200)
-			height: 190px
+			height: 180px
 			
 		+r(992)
 			height: 230px
@@ -719,10 +716,26 @@ body
 		height: 100%
 		transition: all 10s
 
+.teaching
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+		gap: 30px
+
 .accordion
-	padding: 20px 0
-	margin-bottom: 10px
+	position: relative
+	margin-bottom: 20px
 	border-bottom: 1px solid #161B21
+
+	&::before
+		content: ''
+		position: absolute
+		bottom: 0
+		display: block
+		width: 100%
+		height: 1px
+		background-color: $text
 
 	&:last-child
 		margin-bottom: 0
@@ -731,9 +744,13 @@ body
 		+transition
 		display: flex
 		align-items: center
-		justify-content: space-between
 		cursor: pointer
 		font-weight: 700
+		padding-bottom: 20px
+		font-size: 36px
+
+		&_title
+			padding-left: 20px
 
 		span
 			+transition
@@ -741,7 +758,6 @@ body
 			width: 32px
 			height: 32px
 			border-radius: 50%
-			border: 1px solid $text
 
 			&::before,
 			&::after
@@ -754,41 +770,57 @@ body
 				background-color: $text
 
 			&::before
-				width: 10px
-				height: 1px
+				width: 30px
+				height: 2px
 			
 			&::after
-				height: 10px
-				width: 1px
+				height: 30px
+				width: 2px
 
 	&__content
-		+transition
+		display: flex
+		justify-content: space-between
+		gap: 20px
 		overflow: hidden
-		color: #b5acac
-		padding-left: 40px
+		color: $text
+		padding: 0 20px 0 60px
 		height: 0
+		+transition
 
-		+r(1200)
+		+r(1440)
+			padding-left: 40px
+
+		+r(992)
 			padding-left: 20px
 
-		+r(767)
-			padding-left: 10px
+	&__img
+		overflow: hidden
+		width: 40%
+
+		img
+			width: 100%
+			object-fit: cover
+
+	&__text
+		display: flex
+		flex-direction: column
+		gap: 20px
+		width: 57%
 
 	&--active
+		margin-bottom: 40px
+
+		&::before
+			bottom: -20px
 
 		.accordion
+			padding-bottom: 20px
+
 			&__header
-				margin-bottom: 20px
-
 				span
-					background-color: $accent
-					border-color: $accent
-
-					&::before
-						background-color: #ffffff
 
 					&::after
-						background-color: transparent
+						height: 0
 
 			&__content
 				opacity: 1
@@ -983,7 +1015,7 @@ body
 		transition: all .6s
 
 		+r(1600)
-			padding: 80px 0
+			padding: 50px 0
 			max-width: 700px
 
 		+r(1440)
@@ -1108,6 +1140,10 @@ body
 		&:not(:placeholder-shown) + label
 			top: -15px
 			font-size: 14px
+
+			+r(992)
+				font-size: 12px
+				top: -10px
 
 		&._error
 			box-shadow: 0 14px 0 0 rgba(#ff0000, .4)
@@ -1360,4 +1396,22 @@ body
 		opacity: 0.1 !important
 		+r(992)
 			opacity: 1 !important
+
+.swiper-slide
+	height: 100vh
+	overflow: hidden
+
+.scrollable-content
+	overflow-y: auto
+	height: 100vh
+	width: 100vw
+	box-sizing: border-box
+
+.scrollable-content
+	overflow-y: auto
+	scrollbar-width: none
+	-ms-overflow-style: none
+
+.scrollable-content::-webkit-scrollbar
+	display: none
 

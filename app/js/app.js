@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			loop: true,
 			effect: 'fade',
 			autoplay: {
-				delay: 4000,
+				delay: 5100,
 			},
 		});
 
@@ -45,39 +45,76 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 
 	//----------------------SLIDER-wrapper----------------------
-		var swiper = new Swiper(".wrapper", {
-			direction: "vertical",
-			slidesPerView: "auto",
-			slidesPerView: 1,
-			simulateTouch: false,
-			mousewheel: true,
-			speed: 1200,
-			pagination: {
-				el: ".swiper-pagination",
-				type: "progressbar",
+		// var swiper = new Swiper(".wrapper", {
+		// 	direction: "vertical",
+		// 	slidesPerView: "auto",
+		// 	slidesPerView: 1,
+		// 	simulateTouch: false,
+		// 	mousewheel: true,
+		// 	speed: 1200,
+		// 	pagination: {
+		// 		el: ".swiper-pagination",
+		// 		type: "progressbar",
+		// 	},
+		// 	breakpoints: {
+		// 			0: {
+		// 				enabled: false,
+		// 			},
+		// 			992: {
+		// 				enabled: true,
+		// 				slidesPerView: 1,
+		// 			},
+		// 		},
+		// 		on: {
+		// 			init: function () {
+		// 				if (!this.enabled) {
+		// 					this.disable();
+		// 				}
+		// 			},
+		// 			resize: function () {
+		// 				if (!this.enabled) {
+		// 					this.disable();
+		// 				}
+		// 			},
+		// 	},
+
+		// });
+
+	const swiper = new Swiper('.wrapper', {
+		direction: 'vertical',
+		slidesPerView: 1,
+		simulateTouch: false,
+		speed: 1200,
+		mousewheel: {
+			releaseOnEdges: false, // ми реалізуємо власну логіку нижче
+		},
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'progressbar',
+		},
+		on: {
+			init() {
+				setupScrollBlocking();
 			},
-			breakpoints: {
-					0: {
-						enabled: false,
-					},
-					992: {
-						enabled: true,
-						slidesPerView: 1,
-					},
-				},
-				on: {
-					init: function () {
-						if (!this.enabled) {
-							this.disable();
-						}
-					},
-					resize: function () {
-						if (!this.enabled) {
-							this.disable();
-						}
-					},
-				},
+			slideChange() {
+				setupScrollBlocking();
+			},
+		},
+	});
+	function setupScrollBlocking() {
+		const scrollable = document.querySelectorAll('.scrollable-content');
+		scrollable.forEach(el => {
+			el.addEventListener('wheel', function (e) {
+				const delta = e.deltaY;
+				const atTop = el.scrollTop === 0;
+				const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+				if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+					e.stopPropagation(); // не дає свайперу спрацювати
+				}
+			}, { passive: false });
 		});
+	}
 
 		const slideLinks = document.querySelectorAll('.header__link');
 
@@ -432,35 +469,41 @@ document.addEventListener("DOMContentLoaded", function() {
 		forms('.form');
 
 	//------------------------------ACCORDIONS---------------------------
-		// const accordions = (accordionSelector) => {
-		// 	const	accordion = document.querySelectorAll(accordionSelector);
+		const accordions = (accordionSelector) => {
+			const	accordion = document.querySelectorAll(accordionSelector);
 
-		// 	accordion.forEach(item => {
-		// 		const accordionClick = item.querySelector('.accordion__header'),
-		// 					accordionContent = item.querySelector('.accordion__content');
+			accordion.forEach(item => {
+				const accordionClick = item.querySelector('.accordion__header'),
+							accordionContent = item.querySelector('.accordion__content');
 
-		// 		accordionClick.addEventListener('click', (e) => {
-		// 			if(!item.classList.contains('accordion--active')) {
+				accordionClick.addEventListener('click', (e) => {
+					if(!item.classList.contains('accordion--active')) {
+						// const	accordionActive = document.querySelectorAll('.accordion--active');
+						// accordion.forEach(item => {
+						// 	// if (item !== accordionActive[accordionActive.length - 1]) {
+						// 		item.classList.remove('accordion--active');
+						// 		item.querySelector('.accordion__content').style.height = "0px";
+						// 	// }
+						// });
+						item.classList.add('accordion--active')
+						accordionContent.style.height = "auto"
+						var height = accordionContent.clientHeight + "px"
+						accordionContent.style.height = "0px"
+						setTimeout(() => {
+							accordionContent.style.height = height
+						}, 0)
+					
+					} else {
+						accordionContent.style.height = "0px"
+						item.classList.remove('accordion--active')
+					}
 
-		// 				item.classList.add('accordion--active')
-		// 				accordionContent.style.height = "auto"
-		// 				var height = accordionContent.clientHeight + "px"
-		// 				accordionContent.style.height = "0px"
 
-		// 				setTimeout(() => {
-		// 					accordionContent.style.height = height
-		// 				}, 0)
+				});
+			});
 
-		// 				} else {
-		// 					accordionContent.style.height = "0px"
-		// 						item.classList.remove('accordion--active')
-		// 			}
-
-		// 		});
-		// 	});
-
-		// };
-		// accordions('.accordion');
+		};
+		accordions('.accordion');
 
 });
 	
