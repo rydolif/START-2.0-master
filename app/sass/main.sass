@@ -9,6 +9,9 @@ body
 	+r(1440)
 		font-size: 14px
 
+	+r(992)
+		overflow: auto
+
 .container
 	width: 100%
 	max-width: 1440px
@@ -51,10 +54,11 @@ body
 	+r(1600)
 		font-size: 16px
 		height: 40px
+		width: 280px
 
 	+r(1200)
 		font-size: 14px
-		height: 40px
+		width: 220px
 
 	&:hover
 		box-shadow: 0 0 15px rgba($text, .3)
@@ -96,19 +100,19 @@ body
 
 	&:hover
 		span
-			background-color: $dark
+			background-color: $text
 
 			&::before,
 			&::after
-				background-color: $dark
+				background-color: $text
 
 	&__item
 		position: absolute
 		right: 0
 		top: 50%
-		width: 12px
+		width: 25px
 		height: 2px
-		background-color: $dark
+		background-color: $text
 		border-radius: 4px
 		transition: all .6s
 		bottom: 0
@@ -119,13 +123,13 @@ body
 			display: block
 			position: absolute
 			right: 0
-			background-color: $dark
+			background-color: $text
 			height: 2px
 			transition: all .6s
 
 		&::before
 			top: 7px
-			width: 18px
+			width: 25px
 
 		&::after
 			top: -7px
@@ -221,7 +225,6 @@ body
 		+between
 
 		+r(992)
-			justify-content: start
 			gap: 15px
 
 	&__logo
@@ -316,6 +319,10 @@ body
 	+r(1200)
 		padding: 50px 0 20px
 
+	+r(992)
+		padding: 40px 0
+		height: auto !important
+
 .title
 	font-size: 46px
 	margin-left: 30px
@@ -329,12 +336,21 @@ body
 	+r(1200)
 		font-size: 30px
 
+	+r(992)
+		margin-left: 15px
+
 .hero
 	transition: all 1.2s
 	overflow: hidden
 
+	+r(992)
+		height: auto !important
+
 	&__slider
 		height: 100vh
+
+		+r(992)
+			height: 600px !important
 
 	&__container
 		display: flex
@@ -346,6 +362,8 @@ body
 		flex-direction: column
 		align-items: center
 		height: 100vh
+		background-size: cover
+		background-position: center
 
 	&__title
 		text-align: center
@@ -375,14 +393,24 @@ body
 			width: 400px
 			font-size: 22px
 
-	&__img
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
-		min-height: 100vh
-		min-width: 100vw
-		height: auto
+	// &__img
+	// 	position: absolute
+	// 	top: 50%
+	// 	left: 50%
+	// 	transform: translate(-50%, -50%)
+	// 	min-height: 100vh
+	// 	min-width: 100vw
+	// 	height: auto
+
+	// 	+r(1200)
+	// 		width: auto
+	// 		min-height: 100vh
+
+	// 	+r(992)
+	// 		min-width: 100%
+	// 		max-width: 150%
+	// 		height: auto !important
+	// 		// min-height: 100vh
 
 	&__content
 		position: absolute
@@ -398,7 +426,6 @@ body
 	background-image: url(../images/about__bg.png)
 	background-size: 17%
 	background-position: 100% 100px
-	min-height: 100vh
 
 	&__slider
 		overflow: visible
@@ -463,6 +490,9 @@ body
 		+r(1600)
 			gap: 10px
 
+		+r(1200)
+			padding: 0 15px
+
 		&--left
 			align-items: flex-start
 	
@@ -474,6 +504,16 @@ body
 		+r(1600)
 			width: 500px
 			font-size: 36px
+
+		+r(1440)
+			font-size: 32px
+
+		+r(1200)
+			max-width: 420px
+			font-size: 26px
+
+		+r(992)
+			max-width: 380px
 
 		&--dark
 			color: $dark
@@ -489,6 +529,13 @@ body
 		+r(1600)
 			font-size: 16px
 
+		+r(1200)
+			max-width: 420px
+			font-size: 14px
+
+		+r(992)
+			max-width: 380px
+
 		&--dark
 			color: $dark
 
@@ -500,11 +547,20 @@ body
 		max-width: 500px
 		width: 100%
 
+		+r(1200)
+			max-width: 420px
+
+		+r(992)
+			max-width: 380px
+
 		&_item
 			margin-bottom: 25px
 
 			+r(1440)
 				margin-bottom: 20px
+
+			+r(992)
+				margin-bottom: 15px
 
 .position
 	background-image: url(../images/about__bg.png)
@@ -521,6 +577,9 @@ body
 		+r(1600)
 			width: 80%
 
+		+r(992)
+			width: 100%
+
 	&__item
 		position: relative
 		overflow: hidden
@@ -529,11 +588,26 @@ body
 		+r(1600)
 			height: 250px
 
+		+r(1200)
+			height: 190px
+
+		+r(992)
+			height: 230px
+
 		&--big
 			width: 65%
 
+			+r(992)
+				width: 100%
+
 		&--small
 			width: 32%
+
+			+r(1200)
+				width: 33%
+
+			+r(992)
+				width: 48%
 
 		&:hover
 			img
@@ -561,11 +635,23 @@ body
 		flex-direction: column
 		justify-content: space-between
 
+	&__title
+		margin-bottom: 0
+
 	&__subtitle
 		font-family: $fonts
 		font-size: 44px
 		text-shadow: #1A1A1A 2px 0 10px
 		font-weight: 600
+
+		+r(1440)
+			font-size: 40px
+
+		+r(1200)
+			font-size: 36px
+
+		+r(992)
+			font-size: 26px
 
 	&__btn
 		position: relative
@@ -573,14 +659,15 @@ body
 		opacity: 0
 		transition: all .8s
 
+		+r(992)
+			opacity: 1
+			top: 0
+
 .training
 	background-color: #1A1A1A
 	background-image: url(../images/about__bg.png)
 	background-size: 17%
 	background-position: 100% 100px
-
-	&__text
-		margin-bottom: 20px
 
 	&__grid
 		display: flex
@@ -588,16 +675,40 @@ body
 		gap: 15px 1%
 		width: 100%
 
+		+r(1200)
+			width: 80%
+			margin: 0 auto
+
+		+r(992)
+			width: 100%
+			gap: 15px 4%
+			justify-content: space-between
+
+	&__title
+		margin-bottom: 0
+
 	&__item
 		position: relative
 		overflow: hidden
 		height: 255px
 
+		+r(1200)
+			height: 190px
+			
+		+r(992)
+			height: 230px
+
 		&--big
 			width: 36%
 
+			+r(992)
+				width: 48%
+
 		&--small
 			width: 26%
+
+			+r(992)
+				width: 48%
 
 	&__img
 		position: absolute
@@ -690,6 +801,19 @@ body
 	padding: 150px 0
 	transition: all .6s
 
+	+r(1440)
+		padding: 80px 0
+
+	+r(1200)
+		padding: 40px 0
+		background-position: 50% 90%
+
+	+r(992)
+		padding: 30px 0
+		height: auto !important
+		background-size: contain
+		background-position: 30%
+
 	&__container
 		+between
 		align-items: start
@@ -702,18 +826,33 @@ body
 		gap: 15px
 		padding-top: 20px
 
+		+r(1200)
+			width: 30%
+
 		&:first-child
 			padding-top: 0
 
-		+r(992)
-			gap: 20px
+			+r(1200)
+				width: 100%
+				text-align: center
+				padding-top: 0
 
 	&__logo
 		max-width: 100%
 
+		img
+			+r(1200)
+				width: 120px
+
 	&__title
 		color: $accent
 		font-size: 22px
+
+		+r(1200)
+			font-size: 20px
+
+		+r(992)
+			font-size: 16px
 
 	&__item
 		margin-bottom: 15px
@@ -723,6 +862,15 @@ body
 		color: #ffffff
 		text-decoration: none
 		font-size: 20px
+
+		+r(1440)
+			font-size: 18px
+
+		+r(1200)
+			font-size: 16px
+
+		+r(992)
+			font-size: 14px
 
 		&:hover
 			color: $accent
@@ -1068,6 +1216,12 @@ body
 			align-items: center
 			cursor: pointer
 
+			+r(1600)
+				font-size: 18px
+
+			+r(1440)
+				font-size: 16px
+
 			&::before
 				content: ''
 				align-self: flex-start
@@ -1198,5 +1352,12 @@ body
 
 .slide + .swiper-slide-next
 	transform: scale3d(0.8, 0.8, 0.8) !important
+
+	+r(992)
+		transform: scale3d(1, 1, 1) !important
+
 	.container
 		opacity: 0.1 !important
+		+r(992)
+			opacity: 1 !important
+

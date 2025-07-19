@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-	//----------------------SLIDER-hero----------------------
+	//----------------------Fancybox-----------------------
 		Fancybox.bind("[data-fancybox]", {});
 
 	//----------------------SLIDER-hero----------------------
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//----------------------SLIDER-about----------------------
 		var mySwiper = new Swiper('.about__slider', {
-			slidesPerView: 4,
 			spaceBetween: 30,
 			loop: true,
 			speed: 9000, // тривалість однієї анімації
@@ -25,6 +24,24 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 			freeMode: true,
 			freeModeMomentum: false,
+			breakpoints: {
+				480: {
+					slidesPerView: 2,
+					spaceBetween: 20
+				},
+				767: {
+					slidesPerView: 2,
+					spaceBetween: 30
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 40
+				},
+				1200: {
+					slidesPerView: 4,
+					spaceBetween: 40
+				}
+			}
 		});
 
 	//----------------------SLIDER-wrapper----------------------
@@ -39,6 +56,27 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: ".swiper-pagination",
 				type: "progressbar",
 			},
+			breakpoints: {
+					0: {
+						enabled: false,
+					},
+					992: {
+						enabled: true,
+						slidesPerView: 1,
+					},
+				},
+				on: {
+					init: function () {
+						if (!this.enabled) {
+							this.disable();
+						}
+					},
+					resize: function () {
+						if (!this.enabled) {
+							this.disable();
+						}
+					},
+				},
 		});
 
 		const slideLinks = document.querySelectorAll('.header__link');
