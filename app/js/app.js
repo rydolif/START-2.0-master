@@ -114,20 +114,20 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 		});
 		
-		function setupScrollBlocking() {
-			const scrollable = document.querySelectorAll('.scrollable-content');
-			scrollable.forEach(el => {
-				el.addEventListener('wheel', function (e) {
-					const delta = e.deltaY;
-					const atTop = el.scrollTop === 0;
-					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+		// function setupScrollBlocking() {
+		// 	const scrollable = document.querySelectorAll('.scrollable-content');
+		// 	scrollable.forEach(el => {
+		// 		el.addEventListener('wheel', function (e) {
+		// 			const delta = e.deltaY;
+		// 			const atTop = el.scrollTop === 0;
+		// 			const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
 
-					if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
-						e.stopPropagation(); // не дає свайперу спрацювати
-					}
-				}, { passive: false });
-			});
-		}
+		// 			if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+		// 				e.stopPropagation(); // не дає свайперу спрацювати
+		// 			}
+		// 		}, { passive: false });
+		// 	});
+		// }
 
 		const slideLinks = document.querySelectorAll('.header__link');
 
