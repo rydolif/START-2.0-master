@@ -397,7 +397,7 @@ body
 		position: absolute
 		top: 0
 		left: 0
-		width: 100%
+		width: 100vw
 		height: 100%
 		z-index: -1
 
@@ -460,9 +460,14 @@ body
 
 	&--one
 		background-image: url(../images/bunner--one.jpg)
-	
+
+		video
+			+r(992)
+				width: 120vw
+		
 	&--two
 		background-image: url(../images/bunner--two.jpg)
+
 
 	&--three
 		background-image: url(../images/bunner--three.jpg)
