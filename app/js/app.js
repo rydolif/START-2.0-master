@@ -80,50 +80,72 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		// });
 
-	const swiper = new Swiper('.wrapper', {
-		direction: 'vertical',
-		slidesPerView: 1,
-		simulateTouch: false,
-		speed: 1200,
-		mousewheel: {
-			releaseOnEdges: false,
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'progressbar',
-		},
-		breakpoints: {
-			0: {
-				enabled: false,
+		const swiper = new Swiper('.wrapper', {
+			direction: 'vertical',
+			slidesPerView: 1,
+			simulateTouch: false,
+			speed: 1200,
+			mousewheel: {
+				releaseOnEdges: false,
 			},
-			992: {
-				enabled: true,
-				slidesPerView: 1,
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'progressbar',
 			},
-		},
-		on: {
-			init() {
-				setupScrollBlocking();
+			breakpoints: {
+				0: {
+					enabled: false,
+				},
+				992: {
+					enabled: true,
+					slidesPerView: 1,
+				},
 			},
-			slideChange() {
-				setupScrollBlocking();
+			on: {
+				init() {
+					setupScrollBlocking();
+				},
+				slideChange() {
+					setupScrollBlocking();
+				},
 			},
-		},
-	});
-	function setupScrollBlocking() {
-		const scrollable = document.querySelectorAll('.scrollable-content');
-		scrollable.forEach(el => {
-			el.addEventListener('wheel', function (e) {
-				const delta = e.deltaY;
-				const atTop = el.scrollTop === 0;
-				const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
-
-				if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
-					e.stopPropagation(); // не дає свайперу спрацювати
-				}
-			}, { passive: false });
 		});
-	}
+
+		function setupScrollBlocking() {
+			const scrollable = document.querySelectorAll('.scrollable-content');
+
+			scrollable.forEach(el => {
+				// для миші
+				el.addEventListener('wheel', function (e) {
+					const delta = e.deltaY;
+					const atTop = el.scrollTop === 0;
+					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+					if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+						e.stopPropagation();
+					}
+				}, { passive: false });
+
+				// для сенсорних пристроїв
+				let startY = 0;
+
+				el.addEventListener('touchstart', e => {
+					startY = e.touches[0].clientY;
+				});
+
+				el.addEventListener('touchmove', e => {
+					const currentY = e.touches[0].clientY;
+					const deltaY = startY - currentY;
+
+					const atTop = el.scrollTop === 0;
+					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+					if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) {
+						e.stopPropagation(); // блокує свайпер
+					}
+				}, { passive: false });
+			});
+		}
 
 		const slideLinks = document.querySelectorAll('.header__link');
 
