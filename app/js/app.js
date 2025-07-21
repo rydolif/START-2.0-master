@@ -45,40 +45,112 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 
 	//----------------------SLIDER-wrapper----------------------
-		// var swiper = new Swiper(".wrapper", {
-		// 	direction: "vertical",
-		// 	slidesPerView: "auto",
-		// 	slidesPerView: 1,
-		// 	simulateTouch: false,
-		// 	mousewheel: true,
-		// 	speed: 1200,
-		// 	pagination: {
-		// 		el: ".swiper-pagination",
-		// 		type: "progressbar",
-		// 	},
-		// 	breakpoints: {
-		// 			0: {
-		// 				enabled: false,
+		// let swiperInstance = null;
+
+		// function initSwiper() {
+		// 	const screenWidth = window.innerWidth;
+
+		// 	if (screenWidth >= 992 && !swiperInstance) {
+		// 		swiperInstance = new Swiper('.wrapper', {
+		// 			direction: 'vertical',
+		// 			slidesPerView: 1,
+		// 			simulateTouch: false,
+		// 			speed: 1200,
+		// 			mousewheel: {
+		// 				releaseOnEdges: false,
 		// 			},
-		// 			992: {
-		// 				enabled: true,
-		// 				slidesPerView: 1,
+		// 			pagination: {
+		// 				el: '.swiper-pagination',
+		// 				type: 'progressbar',
 		// 			},
-		// 		},
-		// 		on: {
-		// 			init: function () {
-		// 				if (!this.enabled) {
-		// 					this.disable();
-		// 				}
+		// 			on: {
+		// 				init() {
+		// 					setupScrollBlocking();
+		// 				},
+		// 				slideChange() {
+		// 					setupScrollBlocking();
+		// 				},
 		// 			},
-		// 			resize: function () {
-		// 				if (!this.enabled) {
-		// 					this.disable();
-		// 				}
-		// 			},
-		// 	},
+		// 		});
+				
+		// 		function setupScrollBlocking() {
+		// 			const scrollable = document.querySelectorAll('.scrollable-content');
+
+		// 			scrollable.forEach(el => {
+		// 				// для миші
+		// 				el.addEventListener('wheel', function (e) {
+		// 					const delta = e.deltaY;
+		// 					const atTop = el.scrollTop === 0;
+		// 					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+		// 					if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+		// 						e.stopPropagation();
+		// 					}
+		// 				}, { passive: false });
+
+		// 				// для сенсорних пристроїв
+		// 				let startY = 0;
+
+		// 				el.addEventListener('touchstart', e => {
+		// 					startY = e.touches[0].clientY;
+		// 				});
+
+		// 				el.addEventListener('touchmove', e => {
+		// 					const currentY = e.touches[0].clientY;
+		// 					const deltaY = startY - currentY;
+
+		// 					const atTop = el.scrollTop === 0;
+		// 					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+		// 					if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) {
+		// 						e.stopPropagation(); // блокує свайпер
+		// 					}
+		// 				}, { passive: false });
+		// 			});
+		// 		}
+
+		// //----------------------SLIDER-menu----------------------
+		// const slideLinks = document.querySelectorAll('.header__link');
+
+		// swiper.on('slideChange', function () {
+		// 	const activeSlide = swiper.slides[swiper.activeIndex]
+		// 	const dataAttribute = activeSlide.getAttribute('data-slide')
+
+		// 	slideLinks.forEach(function(link) {
+		// 		const slideIndex = parseInt(link.getAttribute('data-slide'))
+		// 		if(dataAttribute == slideIndex) {
+		// 			slideLinks.forEach(function(item) {
+		// 				item.classList.remove('header__link--active')
+		// 			});
+		// 			link.classList.add('header__link--active')
+		// 		} else (
+		// 			link.classList.remove('header__link--active')
+		// 		)
+
+		// 	});
 
 		// });
+
+		// slideLinks.forEach(function(link) {
+		// 	link.addEventListener('click', function(e) {
+		// 		e.preventDefault();
+		// 		const slideIndex = parseInt(this.getAttribute('data-slide'));
+		// 		swiper.slideTo(slideIndex);
+		// 		slideLinks.forEach(function(item) {
+		// 			item.classList.remove('header__link--active')
+		// 		});
+		// 		this.classList.add('header__link--active')
+		// 	});
+		// });
+
+		// 	} else if (screenWidth < 992 && swiperInstance) {
+		// 		swiperInstance.destroy(false, true); // Залишає DOM
+		// 		swiperInstance = null;
+		// 	}
+		// }
+
+		// window.addEventListener('load', initSwiper);
+		// window.addEventListener('resize', initSwiper);
 
 let swiperInstance = null;
 
@@ -104,118 +176,84 @@ function initSwiper() {
 				},
 				slideChange() {
 					setupScrollBlocking();
+					updateSlideMenu(swiperInstance); // додаємо оновлення меню
 				},
 			},
 		});
-		
-		function setupScrollBlocking() {
-			const scrollable = document.querySelectorAll('.scrollable-content');
 
-			scrollable.forEach(el => {
-				// для миші
-				el.addEventListener('wheel', function (e) {
-					const delta = e.deltaY;
-					const atTop = el.scrollTop === 0;
-					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
-
-					if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
-						e.stopPropagation();
-					}
-				}, { passive: false });
-
-				// для сенсорних пристроїв
-				let startY = 0;
-
-				el.addEventListener('touchstart', e => {
-					startY = e.touches[0].clientY;
-				});
-
-				el.addEventListener('touchmove', e => {
-					const currentY = e.touches[0].clientY;
-					const deltaY = startY - currentY;
-
-					const atTop = el.scrollTop === 0;
-					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
-
-					if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) {
-						e.stopPropagation(); // блокує свайпер
-					}
-				}, { passive: false });
-			});
-		}
-
-		const slideLinks = document.querySelectorAll('.header__link');
-
-		swiper.on('slideChange', function () {
-			const activeSlide = swiper.slides[swiper.activeIndex]
-			const dataAttribute = activeSlide.getAttribute('data-slide')
-
-			slideLinks.forEach(function(link) {
-				const slideIndex = parseInt(link.getAttribute('data-slide'))
-				if(dataAttribute == slideIndex) {
-					slideLinks.forEach(function(item) {
-						item.classList.remove('header__link--active')
-					});
-					link.classList.add('header__link--active')
-				} else (
-					link.classList.remove('header__link--active')
-				)
-
-			});
-
-		});
-
-		slideLinks.forEach(function(link) {
-			link.addEventListener('click', function(e) {
-				e.preventDefault();
-				const slideIndex = parseInt(this.getAttribute('data-slide'));
-				swiper.slideTo(slideIndex);
-				slideLinks.forEach(function(item) {
-					item.classList.remove('header__link--active')
-				});
-				this.classList.add('header__link--active')
-			});
-		});
+		setupMenuListeners(swiperInstance); // додаємо обробку кліків
 	} else if (screenWidth < 992 && swiperInstance) {
-		swiperInstance.destroy(false, true); // Залишає DOM
+		swiperInstance.destroy(false, true);
 		swiperInstance = null;
 	}
 }
 
 window.addEventListener('load', initSwiper);
 window.addEventListener('resize', initSwiper);
-		// const swiper = new Swiper('.wrapper', {
-		// 	direction: 'vertical',
-		// 	slidesPerView: 1,
-		// 	simulateTouch: false,
-		// 	speed: 1200,
-		// 	mousewheel: {
-		// 		releaseOnEdges: false,
-		// 	},
-		// 	pagination: {
-		// 		el: '.swiper-pagination',
-		// 		type: 'progressbar',
-		// 	},
-		// 	breakpoints: {
-		// 		0: {
-		// 			enabled: false,
-		// 		},
-		// 		992: {
-		// 			enabled: true,
-		// 			slidesPerView: 1,
-		// 		},
-		// 	},
-		// 	on: {
-		// 		init() {
-		// 			setupScrollBlocking();
-		// 		},
-		// 		slideChange() {
-		// 			setupScrollBlocking();
-		// 		},
-		// 	},
-		// });
 
-	
+// ---------------------- scroll blocking ----------------------
+function setupScrollBlocking() {
+	const scrollable = document.querySelectorAll('.scrollable-content');
+
+	scrollable.forEach(el => {
+		el.addEventListener('wheel', function (e) {
+			const delta = e.deltaY;
+			const atTop = el.scrollTop === 0;
+			const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+			if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+				e.stopPropagation();
+			}
+		}, { passive: false });
+
+		let startY = 0;
+		el.addEventListener('touchstart', e => {
+			startY = e.touches[0].clientY;
+		});
+		el.addEventListener('touchmove', e => {
+			const currentY = e.touches[0].clientY;
+			const deltaY = startY - currentY;
+			const atTop = el.scrollTop === 0;
+			const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+			if ((deltaY < 0 && !atTop) || (deltaY > 0 && !atBottom)) {
+				e.stopPropagation();
+			}
+		}, { passive: false });
+	});
+}
+
+// ---------------------- SLIDER-menu ----------------------
+const slideLinks = document.querySelectorAll('.header__link');
+
+function updateSlideMenu(swiper) {
+	const activeSlide = swiper.slides[swiper.activeIndex];
+	const dataAttribute = activeSlide.getAttribute('data-slide');
+
+	slideLinks.forEach(link => {
+		const slideIndex = parseInt(link.getAttribute('data-slide'));
+		if (dataAttribute == slideIndex) {
+			slideLinks.forEach(item => item.classList.remove('header__link--active'));
+			link.classList.add('header__link--active');
+		} else {
+			link.classList.remove('header__link--active');
+		}
+	});
+}
+
+function setupMenuListeners(swiper) {
+	slideLinks.forEach(link => {
+		link.addEventListener('click', function (e) {
+			e.preventDefault();
+			const slideIndex = parseInt(this.getAttribute('data-slide'));
+			swiper.slideTo(slideIndex);
+			slideLinks.forEach(item => item.classList.remove('header__link--active'));
+			this.classList.add('header__link--active');
+		});
+	});
+}
+
+
 	//----------------------SLIDER-about----------------------
 	// 	// var mySwiper = new Swiper('.about__slider', {
 	// 	// 	slidesPerView: 4,
