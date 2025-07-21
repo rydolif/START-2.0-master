@@ -1065,6 +1065,8 @@ body
 		+r(576)
 			width: 30px
 			height: 30px
+			right: 10px
+			top: 10px
 
 		&:hover
 			outline: none
@@ -1082,6 +1084,10 @@ body
 			border-radius: 4px
 			height: 35px
 			width: 4px
+
+			+r(576)
+				height: 20px
+				width: 3px
 
 			&:first-child
 				transform: translate(-50%, -50%) rotate(45deg)
@@ -1127,6 +1133,9 @@ body
 		
 		+r(576)
 			padding: 25px
+		
+		+r(480)
+			padding: 15px
 
 	&__title
 		text-transform: none
