@@ -91,14 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: '.swiper-pagination',
 				type: 'progressbar',
 			},
-			// on: {
-			// 	init() {
-			// 		setupScrollBlocking();
-			// 	},
-			// 	slideChange() {
-			// 		setupScrollBlocking();
-			// 	},
-			// },
 			breakpoints: {
 				0: {
 					enabled: false,
