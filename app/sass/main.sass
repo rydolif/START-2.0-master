@@ -480,6 +480,8 @@ body
 		justify-content: center
 		gap: 20px
 		padding: 0 40px
+		transition: all 5s
+		opacity: 0
 
 		+r(1600)
 			gap: 10px
@@ -489,7 +491,7 @@ body
 
 		&--left
 			align-items: flex-start
-	
+
 	&__title
 		text-align: center
 		margin: 0
@@ -1414,4 +1416,9 @@ body
 
 .scrollable-content::-webkit-scrollbar
 	display: none
+
+
+.swiper-slide-active
+	.bunner__container
+		opacity: 1
 
