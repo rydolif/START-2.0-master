@@ -552,6 +552,7 @@ body
 		text-align: center
 		margin: 0
 		color: $text
+		z-index: 2
 
 		+r(1600)
 			width: 500px
@@ -577,6 +578,7 @@ body
 		text-shadow: $dark 2px 0 2px
 		font-size: 18px
 		width: 500px
+		z-index: 2
 
 		+r(1600)
 			font-size: 16px
@@ -644,6 +646,25 @@ body
 
 			+r(992)
 				margin-bottom: 15px
+
+	&__video
+		position: absolute
+		top: 0
+		left: 0
+		width: 100vw
+		height: 100%
+		z-index: 1
+
+		video
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: 70% 50%
+
+		&--dark
+			video
+				+r(576)
+					object-position: 15% 50%
 
 .position
 	background-image: url(../images/about__bg.png)
@@ -902,6 +923,9 @@ body
 
 		+r(992)
 			padding-left: 20px
+
+		+r(767)
+			padding: 0
 
 	&__img
 		overflow: hidden

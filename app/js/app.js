@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	//----------------------SLIDER-about----------------------
 		var mySwiper = new Swiper('.about__slider', {
-			spaceBetween: 30,
+			spaceBetween: 15,
 			loop: true,
 			speed: 9000, // тривалість однієї анімації
 			autoplay: {
@@ -24,9 +24,10 @@ document.addEventListener("DOMContentLoaded", function() {
 			},
 			freeMode: true,
 			freeModeMomentum: false,
+			slidesPerView: 1.35,
 			breakpoints: {
 				480: {
-					slidesPerView: 2,
+					slidesPerView: 1,
 					spaceBetween: 20
 				},
 				767: {
