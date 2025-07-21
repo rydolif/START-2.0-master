@@ -172,6 +172,9 @@ body
 		left: auto !important
 		right: 0 !important
 
+		+r(992)
+			display: none
+
 	.swiper-pagination-progressbar .swiper-pagination-progressbar-fill
 		background-color: $text !important
 
@@ -402,7 +405,7 @@ body
 		left: 0
 		width: 100vw
 		height: 100%
-		z-index: -1
+		z-index: 1
 
 		video
 			width: 100%
@@ -417,6 +420,7 @@ body
 		text-align: center
 		width: 100%
 		max-width: 1200px
+		z-index: 2
 
 .about
 	background-color: #1A1A1A
@@ -1433,3 +1437,8 @@ body
 	.bunner__container
 		opacity: 1
 
+.wrapper--wrap
+	+r(992)
+		width: 100%
+		height: 100%
+		flex-direction: column

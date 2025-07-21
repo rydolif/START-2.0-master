@@ -80,7 +80,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		// });
 
-		const swiper = new Swiper('.wrapper', {
+let swiperInstance = null;
+
+function initSwiper() {
+	const screenWidth = window.innerWidth;
+
+	if (screenWidth >= 992 && !swiperInstance) {
+		swiperInstance = new Swiper('.wrapper', {
 			direction: 'vertical',
 			slidesPerView: 1,
 			simulateTouch: false,
@@ -92,15 +98,6 @@ document.addEventListener("DOMContentLoaded", function() {
 				el: '.swiper-pagination',
 				type: 'progressbar',
 			},
-			breakpoints: {
-				0: {
-					enabled: false,
-				},
-				992: {
-					enabled: true,
-					slidesPerView: 1,
-				},
-			},
 			on: {
 				init() {
 					setupScrollBlocking();
@@ -110,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				},
 			},
 		});
-
+		
 		function setupScrollBlocking() {
 			const scrollable = document.querySelectorAll('.scrollable-content');
 
@@ -179,6 +176,45 @@ document.addEventListener("DOMContentLoaded", function() {
 				this.classList.add('header__link--active')
 			});
 		});
+	} else if (screenWidth < 992 && swiperInstance) {
+		swiperInstance.destroy(false, true); // Залишає DOM
+		swiperInstance = null;
+	}
+}
+
+window.addEventListener('load', initSwiper);
+window.addEventListener('resize', initSwiper);
+		// const swiper = new Swiper('.wrapper', {
+		// 	direction: 'vertical',
+		// 	slidesPerView: 1,
+		// 	simulateTouch: false,
+		// 	speed: 1200,
+		// 	mousewheel: {
+		// 		releaseOnEdges: false,
+		// 	},
+		// 	pagination: {
+		// 		el: '.swiper-pagination',
+		// 		type: 'progressbar',
+		// 	},
+		// 	breakpoints: {
+		// 		0: {
+		// 			enabled: false,
+		// 		},
+		// 		992: {
+		// 			enabled: true,
+		// 			slidesPerView: 1,
+		// 		},
+		// 	},
+		// 	on: {
+		// 		init() {
+		// 			setupScrollBlocking();
+		// 		},
+		// 		slideChange() {
+		// 			setupScrollBlocking();
+		// 		},
+		// 	},
+		// });
+
 	
 	//----------------------SLIDER-about----------------------
 	// 	// var mySwiper = new Swiper('.about__slider', {
