@@ -45,76 +45,97 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 
 	//----------------------SLIDER-wrapper----------------------
-		// var swiper = new Swiper(".wrapper", {
-		// 	direction: "vertical",
-		// 	slidesPerView: "auto",
-		// 	slidesPerView: 1,
-		// 	simulateTouch: false,
-		// 	mousewheel: true,
-		// 	speed: 1200,
-		// 	pagination: {
-		// 		el: ".swiper-pagination",
-		// 		type: "progressbar",
-		// 	},
-		// 	breakpoints: {
-		// 			0: {
-		// 				enabled: false,
-		// 			},
-		// 			992: {
-		// 				enabled: true,
-		// 				slidesPerView: 1,
-		// 			},
-		// 		},
-		// 		on: {
-		// 			init: function () {
-		// 				if (!this.enabled) {
-		// 					this.disable();
-		// 				}
-		// 			},
-		// 			resize: function () {
-		// 				if (!this.enabled) {
-		// 					this.disable();
-		// 				}
-		// 			},
-		// 	},
-
-		// });
-
-	const swiper = new Swiper('.wrapper', {
-		direction: 'vertical',
-		slidesPerView: 1,
-		simulateTouch: false,
-		speed: 1200,
-		mousewheel: {
-			releaseOnEdges: false, // ми реалізуємо власну логіку нижче
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			type: 'progressbar',
-		},
-		on: {
-			init() {
-				setupScrollBlocking();
+		var swiper = new Swiper(".wrapper", {
+			direction: "vertical",
+			slidesPerView: "auto",
+			slidesPerView: 1,
+			simulateTouch: false,
+			mousewheel: true,
+			speed: 1200,
+			pagination: {
+				el: ".swiper-pagination",
+				type: "progressbar",
 			},
-			slideChange() {
-				setupScrollBlocking();
+			breakpoints: {
+				0: {
+					enabled: false,
+				},
+				992: {
+					enabled: true,
+					slidesPerView: 1,
+				},
 			},
-		},
-	});
-	function setupScrollBlocking() {
-		const scrollable = document.querySelectorAll('.scrollable-content');
-		scrollable.forEach(el => {
-			el.addEventListener('wheel', function (e) {
-				const delta = e.deltaY;
-				const atTop = el.scrollTop === 0;
-				const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
-
-				if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
-					e.stopPropagation(); // не дає свайперу спрацювати
-				}
-			}, { passive: false });
+			on: {
+				init: function () {
+					if (!this.enabled) {
+						this.disable();
+					}
+				},
+				resize: function () {
+					if (!this.enabled) {
+						this.disable();
+					}
+				},
+			},
 		});
-	}
+
+		const swiper = new Swiper('.wrapper', {
+			direction: 'vertical',
+			slidesPerView: 1,
+			simulateTouch: false,
+			speed: 1200,
+			mousewheel: {
+				releaseOnEdges: false, // ми реалізуємо власну логіку нижче
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'progressbar',
+			},
+			// on: {
+			// 	init() {
+			// 		setupScrollBlocking();
+			// 	},
+			// 	slideChange() {
+			// 		setupScrollBlocking();
+			// 	},
+			// },
+			breakpoints: {
+				0: {
+					enabled: false,
+				},
+				992: {
+					enabled: true,
+					slidesPerView: 1,
+				},
+			},
+			on: {
+				init: function () {
+					if (!this.enabled) {
+						this.disable();
+					}
+				},
+				resize: function () {
+					if (!this.enabled) {
+						this.disable();
+					}
+				},
+			},
+		});
+		
+		function setupScrollBlocking() {
+			const scrollable = document.querySelectorAll('.scrollable-content');
+			scrollable.forEach(el => {
+				el.addEventListener('wheel', function (e) {
+					const delta = e.deltaY;
+					const atTop = el.scrollTop === 0;
+					const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight;
+
+					if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+						e.stopPropagation(); // не дає свайперу спрацювати
+					}
+				}, { passive: false });
+			});
+		}
 
 		const slideLinks = document.querySelectorAll('.header__link');
 
