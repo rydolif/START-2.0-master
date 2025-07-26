@@ -266,7 +266,7 @@ body
 			+r(992)
 				display: flex
 				left: 0
-		
+
 	&__list
 		display: flex
 		gap: 40px
@@ -313,9 +313,13 @@ body
 
 		&:active
 			color: $accent
+
 			&::before
 				width: 90%
 				background-color: $accent
+
+				+r(992)
+					width: 100%
 
 		&::before
 			content: ''
@@ -437,6 +441,7 @@ body
 			height: 40px
 			width: 400px
 			font-size: 22px
+			max-width: 90%
 
 	&__video
 		position: absolute

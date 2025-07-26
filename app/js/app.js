@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		window.addEventListener('load', initSwiper);
 		window.addEventListener('resize', initSwiper);
 
-		// ---------------------- scroll blocking ----------------------
+	// ---------------------- scroll blocking ----------------------
 		function setupScrollBlocking() {
 			const scrollable = document.querySelectorAll('.scrollable-content');
 
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		}
 
-		// ---------------------- SLIDER-menu ----------------------
+	// ---------------------- SLIDER-menu ----------------------
 		const slideLinks = document.querySelectorAll('.header__link');
 
 		function updateSlideMenu(swiper) {
@@ -147,93 +147,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		}
 
-
-	//----------------------SLIDER-about----------------------
-	// 	// var mySwiper = new Swiper('.about__slider', {
-	// 	// 	slidesPerView: 4,
-	// 	// 	spaceBetween: 30,
-	// 	// 	loop: true,
-	// 	// 	autoplay: {
-	// 	// 		delay: 4000,
-	// 	// 	},
-	// 		// pagination: {
-	// 		// 	el: '.hero__pagination',
-	// 		// 	clickable: 'true',
-	// 		// },
-	// 		// navigation: {
-	// 		// 	nextEl: '.hero__next',
-	// 		// 	prevEl: '.hero__prev',
-	// 		// },
-	// 		// breakpoints: {
-	// 		// 	320: {
-	// 		// 		slidesPerView: 1,
-	// 		// 		spaceBetween: 20
-	// 		// 	},
-	// 		// }
-	// 	// });
-
-	// //----------------------SCROLL-----------------------
-	// 	const scrollTo = (scrollTo) => {
-	// 		let list = document.querySelector(scrollTo);
-	// 		list = '.' + list.classList[0]  + ' li a[href^="#"';
-	
-	// 		document.querySelectorAll(list).forEach(link => {
-	
-	// 			link.addEventListener('click', function(e) {
-	// 					e.preventDefault();
-	// 					const scrollMenu = document.querySelector(scrollTo);
-	
-	// 					let href = this.getAttribute('href').substring(1);
-	
-	// 					const scrollTarget = document.getElementById(href);
-	
-	// 					// const topOffset = scrollMenu.offsetHeight;
-	// 					const topOffset = 70;
-	// 					const elementPosition = scrollTarget.getBoundingClientRect().top;
-	// 					const offsetPosition = elementPosition - topOffset;
-
-	// 					console.log(offsetPosition)
-	// 					console.log(window.innerHeight)
-	
-	// 					window.scrollBy({
-	// 							top: offsetPosition,
-	// 							behavior: 'smooth'
-	// 					});
-
-	// 					// window.scrollBy(0, window.innerHeight);
-	
-						
-	// 					let button = document.querySelector('.hamburger'),
-	// 							nav = document.querySelector('.header__nav'),
-	// 							header = document.querySelector('.header');
-	
-	// 					button.classList.remove('hamburger--active');
-	// 					nav.classList.remove('header__nav--active');
-	// 					header.classList.remove('header--menu');
-	// 			});
-	// 		});
-	// 	};
-	// 	scrollTo('.header__nav');
-	
-	// //----------------------FIXED-HEADER-----------------------
-	// 	const headerFixed = (headerFixed, headerActive) => {
-	// 		const header =  document.querySelector(headerFixed),
-	// 					active = headerActive.replace(/\./, '');
-	
-	// 		window.addEventListener('scroll', function() {
-	// 			const top = pageYOffset;
-				
-	// 			if (top >= 90) {
-	// 				header.classList.add(active);
-	// 			} else {
-	// 				header.classList.remove(active);
-	// 			}
-	
-	// 		});
-	
-	// 	};
-	// 	headerFixed('.header', '.header--active');
-	
 	//----------------------HAMBURGER-----------------------
 		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
 			const button = document.querySelector(hamburgerButton),
@@ -477,13 +390,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 				accordionClick.addEventListener('click', (e) => {
 					if(!item.classList.contains('accordion--active')) {
-						// const	accordionActive = document.querySelectorAll('.accordion--active');
-						// accordion.forEach(item => {
-						// 	// if (item !== accordionActive[accordionActive.length - 1]) {
-						// 		item.classList.remove('accordion--active');
-						// 		item.querySelector('.accordion__content').style.height = "0px";
-						// 	// }
-						// });
 						item.classList.add('accordion--active')
 						accordionContent.style.height = "auto"
 						var height = accordionContent.clientHeight + "px"
@@ -504,5 +410,25 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		accordions('.accordion');
 
-});
+	//----------------------FIXED-HEADER-----------------------
+		const headerFixed = (headerFixed, headerActive) => {
+			const header =  document.querySelector(headerFixed),
+						active = headerActive.replace(/\./, '');
 	
+			window.addEventListener('scroll', function() {
+				const top = pageYOffset;
+				
+				if (top >= 90) {
+					header.classList.add(active);
+				} else {
+					header.classList.remove(active);
+				}
+	
+			});
+	
+		};
+		headerFixed('.header', '.header--active');
+
+});
+
+
