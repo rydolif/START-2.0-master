@@ -18,16 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		var mySwiper = new Swiper('.about__slider', {
 			spaceBetween: 15,
 			loop: true,
-			speed: 9000, // тривалість однієї анімації
+			speed: 9000,
 			autoplay: {
-				delay: 0, // без паузи між прокрутками
+				delay: 0,
 			},
 			freeMode: true,
 			freeModeMomentum: false,
 			slidesPerView: 1.35,
 			breakpoints: {
 				480: {
-					slidesPerView: 1,
+					slidesPerView: 2,
 					spaceBetween: 20
 				},
 				767: {
