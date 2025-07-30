@@ -13,8 +13,6 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css"/>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
 	<script src="js/app.min.js" defer></script>
 </head>
 
@@ -39,8 +37,8 @@
 
 			<nav class="header__nav">
 				<ul class="header__list">
-					<li class="header__item"><a href="#" class="header__link" data-slide="1">Про підрозділ</a></li>
-					<li class="header__item"><a href="#" class="header__link" data-slide="3">Посади</a></li>
+					<li class="header__item"><a href="#" class="header__link" data-slide="1">Посади</a></li>
+					<li class="header__item"><a href="#" class="header__link" data-slide="3">Про підрозділ</a></li>
 					<li class="header__item"><a href="#" class="header__link" data-slide="5">Підготовка</a></li>
 					<li class="header__item"><a href="#" class="header__link" data-slide="6">Контракт 18 - 24</a></li>
 					<li class="header__item"><a href="#" class="header__link" data-slide="9">Контакти</a></li>
@@ -106,69 +104,38 @@
 				</div>
 			</section>
 
-			<section class="about swiper-slide slide section" data-slide="1">
+			<section class="position swiper-slide slide section" data-slide="3">
 				<div class="container">
-					<h2 class="title about__title">Про підрозділ</h2>
-					<p class="about__text">
-						Lorem Ipsum є псевдо - латинський текст використовується у веб - дизайні, типографіка, верстка, 
-						і друку замість англійської підкреслити елементи дизайну над змістом. Це також називається заповнювач 
-						( або наповнювач) текст. Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи 
-						в документ або презентацію, наприклад, друкарня, шрифт, або макет. Lorem Ipsum в основному частиною 
-						латинського тексту за класичною автор і філософа Цицерона. Це слова і букви були змінені додаванням 
-						або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи зрозумілою 
-						Латинської більше. У той час як Lorem Ipsum все ще нагадує класичну латину, він насправді не має ніякого 
-						значення. Як текст Цицерона не містить літери K, W, або Z, чужі латина, ці та інші часто вставляється 
-						випадково імітувати типографський Зовнішність європейських мовах, як і орграфов будуть знайдено в оригіналі.
-					</p>
-				</div>
-
-				<div class="swiper about__slider">
-					<div class="swiper-wrapper about__wrapper">
-						<a data-fancybox="gallery" data-src="images/about__0_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__0.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__1_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__1.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__3_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__3.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__2_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__2.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__6_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__6.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__7_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__7.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__14_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__14.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__8_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__8.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__5_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__5.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__9_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__9.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__4_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__4.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__10_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__10.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__11_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__11.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__12_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__12.jpg" alt="" class="about__img">
-						</a>
-						<a data-fancybox="gallery" data-src="images/about__13_1.jpg" class="swiper-slide about__item">
-							<img src="images/about__13.jpg" alt="" class="about__img">
-						</a>
+					<div class="position__grid">
+						<h2 class="title position__title">Актуальні посади</h2>
+						<div class="position__item position__item--big">
+							<img src="images/position__1.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Оператор <br>ударних БПЛА</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+						<div class="position__item position__item--small">
+							<img src="images/position__2.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Медик взводу</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+						<div class="position__item position__item--small">
+							<img src="images/position__3.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Кулементник</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
+						<div class="position__item  position__item--big">
+							<img src="images/position__4.jpg" alt="" class="position__img">
+							<div class="position__content">
+								<h3 class="position__subtitle">Гранатометник</h3>
+								<a href="#" class="btn position__btn">Приєднуйся</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -223,38 +190,70 @@
 				</div>
 			</section>
 
-			<section class="position swiper-slide slide section" data-slide="3">
+			<section class="about swiper-slide slide section" data-slide="1">
 				<div class="container">
-					<div class="position__grid">
-						<h2 class="title position__title">Актуальні посади</h2>
-						<div class="position__item position__item--big">
-							<img src="images/position__1.jpg" alt="" class="position__img">
-							<div class="position__content">
-								<h3 class="position__subtitle">Оператор <br>ударних БПЛА</h3>
-								<a href="#" class="btn position__btn">Приєднуйся</a>
-							</div>
-						</div>
-						<div class="position__item position__item--small">
-							<img src="images/position__2.jpg" alt="" class="position__img">
-							<div class="position__content">
-								<h3 class="position__subtitle">Медик взводу</h3>
-								<a href="#" class="btn position__btn">Приєднуйся</a>
-							</div>
-						</div>
-						<div class="position__item position__item--small">
-							<img src="images/position__3.jpg" alt="" class="position__img">
-							<div class="position__content">
-								<h3 class="position__subtitle">Кулементник</h3>
-								<a href="#" class="btn position__btn">Приєднуйся</a>
-							</div>
-						</div>
-						<div class="position__item  position__item--big">
-							<img src="images/position__4.jpg" alt="" class="position__img">
-							<div class="position__content">
-								<h3 class="position__subtitle">Гранатометник</h3>
-								<a href="#" class="btn position__btn">Приєднуйся</a>
-							</div>
-						</div>
+					<h2 class="title about__title">Про підрозділ</h2>
+					<p class="about__text">
+						Lorem Ipsum є псевдо - латинський текст використовується у веб - дизайні, типографіка, верстка, 
+						і друку замість англійської підкреслити елементи дизайну над змістом. Це також називається заповнювач 
+						( або наповнювач) текст. Це зручний інструмент для макетів. Це допомагає намітити візуальні елементи 
+						в документ або презентацію, наприклад, друкарня, шрифт, або макет. Lorem Ipsum в основному частиною 
+						латинського тексту за класичною автор і філософа Цицерона. Це слова і букви були змінені додаванням 
+						або видаленням, так навмисно роблять його зміст безглуздо, це не є справжньою, правильно чи зрозумілою 
+						Латинської більше. У той час як Lorem Ipsum все ще нагадує класичну латину, він насправді не має ніякого 
+						значення. Як текст Цицерона не містить літери K, W, або Z, чужі латина, ці та інші часто вставляється 
+						випадково імітувати типографський Зовнішність європейських мовах, як і орграфов будуть знайдено в оригіналі.
+					</p>
+				</div>
+
+				<div class="swiper about__slider">
+					<div class="swiper-wrapper about__wrapper">
+						<a data-fancybox="gallery" data-src="images/about__0_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__0.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__1_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__1.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__3_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__3.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__2_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__2.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__6_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__6.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__7_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__7.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__14_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__14.jpg" alt="" class="about__img">
+						</a>
+
+						<a data-fancybox="gallery" data-src="images/about__5_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__5.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__9_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__9.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__4_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__4.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__10_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__10.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__11_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__11.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__8_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__8.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__13_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__13.jpg" alt="" class="about__img">
+						</a>
+						<a data-fancybox="gallery" data-src="images/about__12_1.jpg" class="swiper-slide about__item">
+							<img src="images/about__12.jpg" alt="" class="about__img">
+						</a>
 					</div>
 				</div>
 			</section>
