@@ -679,6 +679,7 @@ body
 	background-image: url(../images/about__bg.png)
 	background-size: 17%
 	background-position: 100% 100px
+	padding: 0
 
 	&__grid
 		display: flex
@@ -686,13 +687,18 @@ body
 		gap: 15px
 		width: 100%
 		margin: 0 auto
+		padding: 90px 0
 
 		+r(1600)
 			width: 80%
 
+		+r(1440)
+			padding: 60px 0
+
 		+r(992)
 			width: 100%
 			gap: 15px 3%
+			padding: 60px 0 30px
 
 	&__item
 		position: relative
