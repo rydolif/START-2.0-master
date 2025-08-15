@@ -118,35 +118,35 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		}
 
-	// // ---------------------- SLIDER-menu ----------------------
-	// 	const slideLinks = document.querySelectorAll('.header__link');
+	// ---------------------- SLIDER-menu ----------------------
+		const slideLinks = document.querySelectorAll('.header__link');
 
-	// 	function updateSlideMenu(swiper) {
-	// 		const activeSlide = swiper.slides[swiper.activeIndex];
-	// 		const dataAttribute = activeSlide.getAttribute('data-slide');
+		function updateSlideMenu(swiper) {
+			const activeSlide = swiper.slides[swiper.activeIndex];
+			const dataAttribute = activeSlide.getAttribute('data-slide');
 
-	// 		slideLinks.forEach(link => {
-	// 			const slideIndex = parseInt(link.getAttribute('data-slide'));
-	// 			if (dataAttribute == slideIndex) {
-	// 				slideLinks.forEach(item => item.classList.remove('header__link--active'));
-	// 				link.classList.add('header__link--active');
-	// 			} else {
-	// 				link.classList.remove('header__link--active');
-	// 			}
-	// 		});
-	// 	}
+			slideLinks.forEach(link => {
+				const slideIndex = parseInt(link.getAttribute('data-slide'));
+				if (dataAttribute == slideIndex) {
+					slideLinks.forEach(item => item.classList.remove('header__link--active'));
+					link.classList.add('header__link--active');
+				} else {
+					link.classList.remove('header__link--active');
+				}
+			});
+		}
 
-	// 	function setupMenuListeners(swiper) {
-	// 		slideLinks.forEach(link => {
-	// 			link.addEventListener('click', function (e) {
-	// 				e.preventDefault();
-	// 				const slideIndex = parseInt(this.getAttribute('data-slide'));
-	// 				swiper.slideTo(slideIndex);
-	// 				slideLinks.forEach(item => item.classList.remove('header__link--active'));
-	// 				this.classList.add('header__link--active');
-	// 			});
-	// 		});
-	// 	}
+		function setupMenuListeners(swiper) {
+			slideLinks.forEach(link => {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+					const slideIndex = parseInt(this.getAttribute('data-slide'));
+					swiper.slideTo(slideIndex);
+					slideLinks.forEach(item => item.classList.remove('header__link--active'));
+					this.classList.add('header__link--active');
+				});
+			});
+		}
 
 	//----------------------HAMBURGER-----------------------
 		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function() {
 										header = document.querySelector('.header');
 			
 								button.classList.remove('hamburger--active');
-								// nav.classList.remove('header__nav--active');
+								nav.classList.remove('header__nav--active');
 								header.classList.remove('header--menu');
 						});
 					});
