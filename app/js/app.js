@@ -74,16 +74,17 @@ document.addEventListener("DOMContentLoaded", function() {
 						},
 					},
 				});
-
-				setupMenuListeners(swiperInstance); // додаємо обробку кліків
+				setupMenuListeners(swiperInstance);
 			} else if (screenWidth < 992 && swiperInstance) {
 				swiperInstance.destroy(false, true);
 				swiperInstance = null;
+	
 			}
 		}
 
 		window.addEventListener('load', initSwiper);
 		window.addEventListener('resize', initSwiper);
+
 
 	// ---------------------- scroll blocking ----------------------
 		function setupScrollBlocking() {
@@ -117,35 +118,35 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		}
 
-	// ---------------------- SLIDER-menu ----------------------
-		const slideLinks = document.querySelectorAll('.header__link');
+	// // ---------------------- SLIDER-menu ----------------------
+	// 	const slideLinks = document.querySelectorAll('.header__link');
 
-		function updateSlideMenu(swiper) {
-			const activeSlide = swiper.slides[swiper.activeIndex];
-			const dataAttribute = activeSlide.getAttribute('data-slide');
+	// 	function updateSlideMenu(swiper) {
+	// 		const activeSlide = swiper.slides[swiper.activeIndex];
+	// 		const dataAttribute = activeSlide.getAttribute('data-slide');
 
-			slideLinks.forEach(link => {
-				const slideIndex = parseInt(link.getAttribute('data-slide'));
-				if (dataAttribute == slideIndex) {
-					slideLinks.forEach(item => item.classList.remove('header__link--active'));
-					link.classList.add('header__link--active');
-				} else {
-					link.classList.remove('header__link--active');
-				}
-			});
-		}
+	// 		slideLinks.forEach(link => {
+	// 			const slideIndex = parseInt(link.getAttribute('data-slide'));
+	// 			if (dataAttribute == slideIndex) {
+	// 				slideLinks.forEach(item => item.classList.remove('header__link--active'));
+	// 				link.classList.add('header__link--active');
+	// 			} else {
+	// 				link.classList.remove('header__link--active');
+	// 			}
+	// 		});
+	// 	}
 
-		function setupMenuListeners(swiper) {
-			slideLinks.forEach(link => {
-				link.addEventListener('click', function (e) {
-					e.preventDefault();
-					const slideIndex = parseInt(this.getAttribute('data-slide'));
-					swiper.slideTo(slideIndex);
-					slideLinks.forEach(item => item.classList.remove('header__link--active'));
-					this.classList.add('header__link--active');
-				});
-			});
-		}
+	// 	function setupMenuListeners(swiper) {
+	// 		slideLinks.forEach(link => {
+	// 			link.addEventListener('click', function (e) {
+	// 				e.preventDefault();
+	// 				const slideIndex = parseInt(this.getAttribute('data-slide'));
+	// 				swiper.slideTo(slideIndex);
+	// 				slideLinks.forEach(item => item.classList.remove('header__link--active'));
+	// 				this.classList.add('header__link--active');
+	// 			});
+	// 		});
+	// 	}
 
 	//----------------------HAMBURGER-----------------------
 		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
@@ -429,6 +430,47 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		headerFixed('.header', '.header--active');
 
+	// ---------------------- scroll  ----------------------
+		function initMenu() {
+			const screenWidth = window.innerWidth;
+			if (screenWidth <= 992) {
+				const scrollTo = (scrollTo) => {
+					let list = document.querySelector(scrollTo);
+					list = '.' + list.classList[0]  + ' li a[href^="#"]';
+
+					document.querySelectorAll(list).forEach(link => {
+
+						link.addEventListener('click', function(e) {
+								e.preventDefault();
+		
+								let href = this.getAttribute('href').substring(1);
+			
+								const scrollTarget = document.getElementById(href);
+			
+								const topOffset = 100;
+								const elementPosition = scrollTarget.getBoundingClientRect().top;
+								const offsetPosition = elementPosition - topOffset;
+			
+								window.scrollBy({
+									top: offsetPosition,
+									behavior: 'smooth'
+								});
+
+								let button = document.querySelector('.hamburger'),
+										nav = document.querySelector('.header__nav'),
+										header = document.querySelector('.header');
+			
+								button.classList.remove('hamburger--active');
+								// nav.classList.remove('header__nav--active');
+								header.classList.remove('header--menu');
+						});
+					});
+				};
+				scrollTo('.header__nav');
+			}
+		}
+		window.addEventListener('load', initMenu);
+		window.addEventListener('resize', initMenu);
 });
 
 
