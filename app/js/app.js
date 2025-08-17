@@ -119,34 +119,39 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 
 	// ---------------------- SLIDER-menu ----------------------
-		const slideLinks = document.querySelectorAll('.header__link');
 
-		function updateSlideMenu(swiper) {
-			const activeSlide = swiper.slides[swiper.activeIndex];
-			const dataAttribute = activeSlide.getAttribute('data-slide');
+		const sliderMenu = (sliderMenuLinks, sliderMenuLinksActive) => {
+			const slideLinks = document.querySelectorAll(sliderMenuLinks);
 
-			slideLinks.forEach(link => {
-				const slideIndex = parseInt(link.getAttribute('data-slide'));
-				if (dataAttribute == slideIndex) {
-					slideLinks.forEach(item => item.classList.remove('header__link--active'));
-					link.classList.add('header__link--active');
-				} else {
-					link.classList.remove('header__link--active');
-				}
-			});
-		}
+			function updateSlideMenu(swiper) {
+				const activeSlide = swiper.slides[swiper.activeIndex];
+				const dataAttribute = activeSlide.getAttribute('data-slide');
 
-		function setupMenuListeners(swiper) {
-			slideLinks.forEach(link => {
-				link.addEventListener('click', function (e) {
-					e.preventDefault();
-					const slideIndex = parseInt(this.getAttribute('data-slide'));
-					swiper.slideTo(slideIndex);
-					slideLinks.forEach(item => item.classList.remove('header__link--active'));
-					this.classList.add('header__link--active');
+				slideLinks.forEach(link => {
+					const slideIndex = parseInt(link.getAttribute('data-slide'));
+					if (dataAttribute == slideIndex) {
+						slideLinks.forEach(item => item.classList.remove(sliderMenuLinksActive));
+						link.classList.add(sliderMenuLinksActive);
+					} else {
+						link.classList.remove(sliderMenuLinksActive);
+					}
 				});
-			});
+			}
+
+			function setupMenuListeners(swiper) {
+				slideLinks.forEach(link => {
+					link.addEventListener('click', function (e) {
+						e.preventDefault();
+						const slideIndex = parseInt(this.getAttribute('data-slide'));
+						swiper.slideTo(slideIndex);
+						slideLinks.forEach(item => item.classList.remove(sliderMenuLinksActive));
+						this.classList.add(sliderMenuLinksActive);
+					});
+				});
+			}
 		}
+		sliderMenu('.header__link', '.header__link--active');
+		sliderMenu('.footer__link', '.footer__link--active');
 
 	//----------------------HAMBURGER-----------------------
 		const hamburger = (hamburgerButton, hamburgerNav, hamburgerHeader) => {
