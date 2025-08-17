@@ -499,6 +499,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					});
 				};
 				scrollTo('.header__nav');
+				scrollTo('.footer__nav');
 			}
 		}
 		window.addEventListener('load', initMenu);
