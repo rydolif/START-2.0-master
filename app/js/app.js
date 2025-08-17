@@ -71,10 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
 						slideChange() {
 							setupScrollBlocking();
 							updateSlideMenu(swiperInstance); // додаємо оновлення меню
+							updateSlideFooterMenu(swiperInstance); // додаємо оновлення меню
 						},
 					},
 				});
 				setupMenuListeners(swiperInstance);
+				setupMenuFooterListeners(swiperInstance);
 			} else if (screenWidth < 992 && swiperInstance) {
 				swiperInstance.destroy(false, true);
 				swiperInstance = null;
@@ -151,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// ---------------------- SLIDER-menu-footer----------------------
 		const slideFooterLinks = document.querySelectorAll('.footer__link');
 
-		function updateSlideMenu(swiper) {
+		function updateSlideFooterMenu(swiper) {
 			const activeSlide = swiper.slides[swiper.activeIndex];
 			const dataAttribute = activeSlide.getAttribute('data-slide');
 
@@ -166,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			});
 		}
 
-		function setupMenuListeners(swiper) {
+		function setupMenuFooterListeners(swiper) {
 			slideFooterLinks.forEach(link => {
 				link.addEventListener('click', function (e) {
 					e.preventDefault();
