@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			
 								const scrollTarget = document.getElementById(href);
 			
-								const topOffset = -90;
+								const topOffset = "-90";
 								const elementPosition = scrollTarget.getBoundingClientRect().top;
 								const offsetPosition = elementPosition - topOffset;
 			
