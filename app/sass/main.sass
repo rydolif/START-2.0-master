@@ -399,7 +399,7 @@ body
 		height: 100vh
 
 		+r(992)
-			height: 600px !important
+			height: auto
 
 	&__container
 		display: flex
@@ -698,24 +698,28 @@ body
 	background-position: 100% 100px
 	padding: 0
 
+	.scrollable-content
+		padding: 90px 0 60px
+
+		+r(1440)
+			padding: 90px 0 20px
+
+		+r(992)
+			padding: 40px 0
+
 	&__grid
 		display: flex
 		flex-wrap: wrap
 		gap: 15px
 		width: 100%
 		margin: 0 auto
-		padding: 90px 0
 
 		+r(1600)
 			width: 80%
 
-		+r(1440)
-			padding: 90px 0 20px
-
 		+r(992)
 			width: 100%
 			gap: 15px 3%
-			padding: 40px 0
 
 	&__item
 		position: relative
@@ -731,13 +735,31 @@ body
 		+r(992)
 			height: 230px
 
-		&--big
+		&:nth-child(even)
 			width: 65%
 
 			+r(992)
 				width: 100%
 
-		&--small
+		&:nth-child(odd)
+			width: 32%
+
+			+r(1200)
+				width: 33%
+
+			+r(992)
+				width: 48.5%
+
+			+r(576)
+				width: 100%
+
+		&:nth-child(4n+1)
+			width: 65%
+
+			+r(992)
+				width: 100%
+
+		&:nth-child(4n+2)
 			width: 32%
 
 			+r(1200)
@@ -777,7 +799,13 @@ body
 		justify-content: space-between
 
 	&__title
-		margin-bottom: 0
+		margin: 0 auto 20px
+
+		+r(1600)
+			width: 80%
+
+		+r(992)
+			width: 100%
 
 	&__subtitle
 		font-family: $fonts
@@ -1654,5 +1682,11 @@ body
 		height: 100%
 		flex-direction: column
 
+
+.customize-support .header
+	top: 30px !important
+
+.about .swiper-slide
+	height: auto
 
 
