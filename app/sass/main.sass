@@ -702,10 +702,7 @@ body
 		padding: 90px 0 60px
 
 		+r(1440)
-			padding: 90px 0 20px
-
-		+r(992)
-			padding: 40px 0
+			padding: 90px 0 40px
 
 	&__grid
 		display: flex
@@ -839,30 +836,30 @@ body
 	background-position: 100% 100px
 	padding: 0
 
+	.scrollable-content
+		padding-top: 90px
+		padding-bottom: 40px
+
+		+r(992)
+			padding-top: 60px
+
+	&__title
+			margin: 0 auto 20px
+
 	&__grid
 		display: flex
 		flex-wrap: wrap
 		gap: 15px 1%
 		width: 100%
-		padding: 90px 0
-
-		+r(1600)
-			width: 80%
-			margin: 0 auto
 
 		+r(992)
-			width: 100%
 			gap: 15px 3%
-			justify-content: space-between
-			padding: 40px 0
-
-	&__title
-		margin-bottom: 0
 
 	&__item
 		position: relative
 		overflow: hidden
 		height: 255px
+		flex: 0 0 auto
 
 		+r(1600)
 			height: 200px
@@ -872,21 +869,23 @@ body
 			
 		+r(992)
 			height: 230px
+			flex-basis: 48.5% !important
 
 		+r(576)
 			height: 150px
 
-		&--big
-			width: 36%
-
-			+r(992)
-				width: 48.5%
-
-		&--small
-			width: 26%
-
-			+r(992)
-				width: 48.5%
+		&:nth-child(6n+1)
+			flex-basis: 36%
+		&:nth-child(6n+2)
+			flex-basis: 26%
+		&:nth-child(6n+3)
+			flex-basis: 36%
+		&:nth-child(6n+4)
+			flex-basis: 36%
+		&:nth-child(6n+5)
+			flex-basis: 36%
+		&:nth-child(6n+6)
+			flex-basis: 26%
 
 	&__img
 		position: absolute
