@@ -504,6 +504,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		window.addEventListener('load', initMenu);
 		window.addEventListener('resize', initMenu);
 });
+
+
 if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
 }
