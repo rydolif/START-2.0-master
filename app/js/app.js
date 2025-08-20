@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					slidesPerView: 1,
 					simulateTouch: false,
 					speed: 1200,
+					initialSlide: 0,
 					mousewheel: {
 						releaseOnEdges: false,
 					},
@@ -80,13 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			} else if (screenWidth < 992 && swiperInstance) {
 				swiperInstance.destroy(false, true);
 				swiperInstance = null;
-	
 			}
 		}
 
 		window.addEventListener('load', initSwiper);
 		window.addEventListener('resize', initSwiper);
-
 
 	// ---------------------- scroll blocking ----------------------
 		function setupScrollBlocking() {
@@ -505,5 +504,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		window.addEventListener('load', initMenu);
 		window.addEventListener('resize', initMenu);
 });
-
-
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
